@@ -4,7 +4,7 @@ This is my personal blog for our MIX course taught at VIA unityversity college i
 
 ### List of posts:
 
-{% for post in site.blogs %}
+{% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
