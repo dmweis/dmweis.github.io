@@ -8,8 +8,8 @@ There are two aproaches to solve this. Inside-out tracking and Outside-In. The d
 
 IF we go historically. The first positionally tracked VR headset was the Vlave VR room prototype.
 
-<img src="/../_images/tracking/Valve_VR_room.png" height="300" />
-<img src="/../_images/tracking/valve_vr_hmd.jpg" height="300" />
+<img src="/_images/tracking/Valve_VR_room.png" height="300" />
+<img src="/_images/tracking/valve_vr_hmd.jpg" height="300" />
 This headset was using fiducial markers (Similar to QR codes. But contrary to popular believe not the same) placed around the entire room. And the headset was constructed using two mobile phone displays and a mobile camera that was used for tracking of the QR codes. Since the position of all of the markers is knowin. We can easily (Relatively) establish pose of the headset.
 
 But this solution obviously ins't ideal. Mostly because having walls covered in tracking markers is not ideal.
