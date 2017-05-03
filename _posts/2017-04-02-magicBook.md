@@ -1,3 +1,7 @@
+---
+title: "Week One: Magic book"
+categories: MIX
+---
 # First week: Magic book!
 
 Our first week assignment was to create an augmented reading experience using mobile AR. With this simple assignment, we decided to start with the software that we were both previously experienced with. Unity and Vuforia. Unity being the game engine that I have quite a lot of experience with and Vufoira being the gluing piece providing AR functionality to our game.
