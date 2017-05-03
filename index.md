@@ -12,4 +12,4 @@ This is my personal blog for our MIX course taught at VIA unityversity college i
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
-Time last built: {{ site.time }}
+Last build time: {{ site.time }}
