@@ -12,5 +12,11 @@ This is my personal blog for our MIX course taught at VIA unityversity college i
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
+### Personal posts:
+
+{% for post in site.categories.Personal %}
+- [{{ post.title }}]({{ post.url }})
+{% endfor %}
+
 
 Last build time: {{ site.time }}
