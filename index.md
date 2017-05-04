@@ -8,7 +8,7 @@ This is my personal blog for our MIX course taught at VIA unityversity college i
 
 ### MIX posts:
 
-{% for post in site.categories.MIX %}
+{% for post in site.categories.MIX reversed %}
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
