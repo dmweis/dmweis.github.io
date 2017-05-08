@@ -33,4 +33,6 @@ And here is the result:
 
 As my final words I'd say that I don't feel like I've learn that much with this weeks project, which may also be why my blog post wasn't all that exciting. I've made many very similar applications before so I didn't find this exact assignment challenging or interesting.
 
+[Back to main page!]({{ site.url }})
+
 Last build time: {{ site.time }}
