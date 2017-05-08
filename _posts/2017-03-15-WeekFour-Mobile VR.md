@@ -33,7 +33,7 @@ And here is a picture of it attached to the controller. Phone goes into the top 
 
 Once this was done we made a very simple shooting range in unity. Just to demonstrate the shooting mechanic
 
-![Unity screenshot]({{site.url}}/images/MixWeekFourMobileVR/unity_screenshot.jpg)
+![Unity screenshot]({{site.url}}/images/MixWeekFourMobileVR/unity_shootingrange_screenshot.jpg)
 
 afterwards we just needed a very simple script in unity to connect to the server and update position of the phone based on the movement of the phone:
 
