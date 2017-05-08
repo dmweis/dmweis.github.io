@@ -25,6 +25,10 @@ Once this was done. We simply attached child objects to the marker in unity to s
 
 ![Project open in Unity]({{site.url}}/images/MixWeekOneWaldo/waldo_unity.png)
 
+And here is the result:
+
+![We found Waldo!]({{site.url}}/images/MixWeekOneWaldo/waldo_solved.png)
+
 ## Conclusion
 
 As my final words I'd say that I don't feel like I've learn that much with this weeks project, which may also be why my blog post wasn't all that exciting. I've made many very similar applications before so I didn't find this exact assignment challenging or interesting.
