@@ -39,17 +39,21 @@ static void ReadRelativePosition()
          }
       }
 ```
-[Position object](https://github.com/dmweis/SteamVrTest/blob/master/SteamVrTest/Position.cs)
-[Rotation object](https://github.com/dmweis/SteamVrTest/blob/master/SteamVrTest/Rotation.cs)
+[Link to repository on my Github](https://github.com/dmweis/SteamVrTest)
 
 
-let me explain why I love the light house first. The lighhouse system works on a very simple principle taht is based on the system taht is used to navigate plans for landing. Ironically something I alter become very aquinted with when I started workign for Insero Software and was on a team that wrote an application used for testing of just that system.
-The lighuse comsists of one/two base stations that have infrared lgiths in them that regularly flash the entire room with infrared light, and than two motors that to a horizontal and vertical sweep with infrared light. Since I am limited on word count I won't go into detail but here is a nice video that exaplins it
+Let me explain why I love the Lighthouse first. The Lighhouse system works on a very simple principle that is based on the system used to navigate plans for landing. Ironically something I become very aquinted with when I started workign for Insero Software and was on a team that wrote an application used for testing of just that system.
+The lighuse comsists of one/two base stations that have infrared lgiths in them that regularly flash the entire room with infrared light, and than two flywheels that do a horizontal and vertical sweep with infrared light. The tracked objects in turn have multiple sensors taht detect when they are hit with infrared light. And since we know the frequency at which the flywheels rotate and the exact position of the sensors on the tracked device we can triangulate the exact pose of each device.
+Since I am limited on word count I won't go into detail but here is a nice video that shows the system at work.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/J54dotTt7k0" frameborder="0" allowfullscreen></iframe>
 
-One of vives prototypes using fiducial markers for positional tracking:
-![Test image]({{site.url}}/images/tracking/Valve_VR_room.png)
+This system may seem pretty complicated at first. Espeicially since it has so many moving parts. Contrary to the Constelation tracking system used by RIft for example. But the magical thing about Lighouse is that in my expirience. It just works and is very simple to use. And requiers minimum equipemnt to get a simple tracker to work. Another thing that I love about this system is that it;s almost entierly open. And very "Hackable". Especially thanks to all fo the information available online thanks to one of it's creators Alan Yates who himself released a lot of information about it's internal working sincluding a schematic for a DIY Tracker circuit and made several talk on the topic of hacking it.
+
+![Schematic for a simple Lighthouse sensor]({{site.url}}/images/MixWeekThreeTracking/lighthouse_sensor_schematic.jpg)
+
+
+Since we combined this weeks project with Mobile VR I will talk about what we did in the post about [Mobile VR]({{ site.baseurl }}{% post_url 2017-03-15-WeekFour-Mobile VR %})
 
 
 Last build time: {{ site.time }}
