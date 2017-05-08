@@ -19,7 +19,7 @@ To "Enhance" (_read as: help you cheat_) this book we decided to make an applica
 
 The solution was very simple. Vuforia, among other things, allows you to do so called **Image targets**. With Image targes you can train Vuforia to track any image you want. As long as it's complexe enought and has enought contrast points. The process for this is very easy. All you need to do is upload the image to their cloud and in return you'll recieve a target pack you can just drop into your Unity/Vuforia app and the app will automatically track the image once the camera sees it.
 
-![Vuforia target manager]({{site.url}}/images/MixWeekOneWaldo/target_manager.JPG)
+![Vuforia target manager]({{site.url}}/images/MixWeekOneWaldo/target_manager.jpg)
 
 Once this was done. We simply attached child objects to the marker in unity to show Waldo and other interesting points on the page. Interesting fact: We used characters to display things on the screen. So the circle around Waldo is actaully just an red upper case <font color="red">O</font>
 
