@@ -12,9 +12,9 @@ This is my personal blog for our MIX course taught at VIA university college in 
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
-### Personal posts:
+### Free time projects:
 
-{% for post in site.categories.Personal %}
+{% for post in site.categories.PrivateProjects %}
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
