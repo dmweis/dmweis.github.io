@@ -5,9 +5,9 @@ categories: MIX
 
 # This week’s topic is Tracking!
 
-Let me start by saying that tracking is my most favorite topic in VR/AR. And when I started writing this post the first time I wrote 700 words of just introduction. I may try to post it as an alternative version but for now here is a very compressed version!
+Let me start by saying that tracking is my most favorite topic in VR/AR. And when I started writing this post the first time, I wrote 700 words of introduction alone. I may try to post it as an alternative version one day, but for now, here is a very compressed version!
 
-We didn't do a full project this week. At least not entirely. Instead our mobile VR project is a bit of a combination of tracking and mobile. But let me start from the beginning.
+We didn't do a full project this week. At least not entirely. Instead our [Mobile VR project]({{ site.baseurl }}{% post_url 2017-03-15-WeekFour-Mobile VR %}) is a bit of a combination of tracking and mobile. But let me start from the beginning.
 As I said tracking is my favorite topic. And my most favorite tracking system is the Lighthouse tracking system used by the HTC Vive. It was one of the driving reasons for why I bought a Vive for myself. And I must say that my Vive spends most of its days just laying on my table and plugged in just to work as a receiver for my controllers. Wiring a simple program that circumvented the entire VR system and just used to controllers as tracking points was actually one of the first things I did with my Vive. And I have since used it for many things ranging from controlling a robotic arm to copy motion of human hand to room mapping using a combination of a Kinect sensor and a controller.
 
 Simple code for getting data from the Lighthouse tracking system:
