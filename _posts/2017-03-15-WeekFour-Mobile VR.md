@@ -139,4 +139,6 @@ And the last part was a simple TCP server taht we used to send the position form
 
 ## Conclusion
 
+I am very proud of our project. THe game itself wasn't very impresive but I feel like it showed what we wanted to show and it actaully provided a nice expirience. Sending data over TCP to Unity is not ideal and it introducet a bit of a stutter sometimes. But I was overall very positively surprised with the performance as well.
+
 Last build time: {{ site.time }}
