@@ -20,3 +20,5 @@ This is my personal blog for our MIX course taught at VIA university college in 
 
 
 Last build time: {{ site.time }}
+
+<meta name="robots" content="noindex">
