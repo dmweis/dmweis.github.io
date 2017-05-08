@@ -50,13 +50,18 @@ Since I am limited on word count I won't go into detail but here is a nice video
 
 This system may seem pretty complicated at first. Espeicially since it has so many moving parts. Contrary to the Constelation tracking system used by RIft for example. But the magical thing about Lighouse is that in my expirience. It just works and is very simple to use. And requiers minimum equipemnt to get a simple tracker to work. Another thing that I love about this system is that it;s almost entierly open. And very "Hackable". Especially thanks to all fo the information available online thanks to one of it's creators Alan Yates who himself released a lot of information about it's internal working sincluding a schematic for a DIY Tracker circuit and made several talk on the topic of hacking it.
 
-![Schematic for a simple Lighthouse sensor]({{site.url}}/images/MixWeekThreeTracking/lighthouse_sensor_schematic.jpg)
+[Schematic for a simple Lighthouse sensor]({{site.url}}/images/MixWeekThreeTracking/lighthouse_sensor_schematic.jpg)
 
 
 Since we combined this weeks project with Mobile VR I will talk about what we did in the post about [Mobile VR]({{ site.baseurl }}{% post_url 2017-03-15-WeekFour-Mobile VR %})
 
 But before I finish this I want to talk about one interesting problem we had to solve.
-SInce our intention was to use an Vive controller withouth the headset we were facing one simple problem. The recievers for the Controllers are located [inside the headset itself][1]. This is a smart solution because the headset is alwas very close to the headset and will almost never loose signal. But it was a problem for us. The sim
+SInce our intention was to use an Vive controller withouth the headset we were facing one simple problem. The recievers for the Controllers are located [inside the headset itself][1]. This is a smart solution because the headset is alwas very close to the headset and will almost never loose signal. But it was a problem for us. The simple solution is to use a SUB cable and connect the controller straight to the computer. This will cause the controller to switch to wired mode and it will work. But I didn't like the wired solution.
+My first attempt was to get the same reciever chip used in the headset and simply flash it the vive controller dongle firmware. The headset has two [Nordic Semiconductor nRF24LU1+ Transcievers](https://www.sparkfun.com/datasheets/Wireless/Nordic/nRF24LU1P_1_0.pdf) it uses to communicate with the controllers. So I orderd one from china to see if I can flash it myself. It took a while (mind you. I did this a while before this semester for a different project of mine) but the transceiver did arrive.
+
+[Nordic Semiconductor nRF24LU1+ Transciever]({{site.url}}/images/MixWeekThreeTracking/transceiver_vive.jpg)
+
+Sadly. As many cheap things ordered from china. It was DOA. And since I didn't want to wait any longer for another possible nonfunctional chip I ended up going for a differen and much easier solution. The origianl Vive Pre developer prototype shipped with different controllers. Among other differences these controller came with USB dongles to connect to the computer. And an interesting fact is that these dingle are the same as the ones using for the [Steam Controller](http://store.steampowered.com/app/353370/Steam_Controller/). And after a bit of research it became obvious that the new controllers can also use the same dongle. So I simple ordered a [Steam Controller dongle](http://store.steampowered.com/app/530260/Steam_Controller_Wireless_Receiver/). And once it arrived I flashed it with the Lighhouse Watchdog firmware. And after a bit of tinkering (a simple config file edit) my controller would connect and SteamVR would run even withouth the headset. I would have done this in the first place even before ordering the chip from china. But sadly it was impossible to order the dongle for the Steam Controller on it's own and I didn't want to flash the one from my controller since I was worried I wouldn't be able to flash it back (A worry of mine that proved to be true afterwards).
 
 [1]: https://www.ifixit.com/Teardown/HTC+Vive+Teardown/62213#s130831
 
