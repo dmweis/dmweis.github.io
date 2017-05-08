@@ -29,11 +29,12 @@ I started by designing a simple mount for the phone
 
 And here is a picture of it attached to the controller. Phone goes into the top slot and can be held in with a rubber band.
 
-![Picture of the mount attached to the controller]({{site.url}}/images/MixWeekFourMobileVR/printed_attached_holder.jpg)
+![Picture of the mount attached to the controller]({{site.url}}/images/MixWeekFourMobileVR/printed_attached_holder.jpg "Picture of the mount attached to the controller")
+The mount is attached using a wire in this image but in practice it is attached with a screw
 
 Once this was done we made a very simple shooting range in unity. Just to demonstrate the shooting mechanic
 
-![Unity screenshot]({{site.url}}/images/MixWeekFourMobileVR/unity_shootingrange_screenshot.jpg)
+![Unity screenshot]({{site.url}}/images/MixWeekFourMobileVR/unity_shootingrange_screenshot.jpg "Unity screenshot of the shootingrange")
 
 afterwards we just needed a very simple script in unity to connect to the server and update position of the phone based on the movement of the phone:
 
