@@ -55,5 +55,9 @@ This system may seem pretty complicated at first. Espeicially since it has so ma
 
 Since we combined this weeks project with Mobile VR I will talk about what we did in the post about [Mobile VR]({{ site.baseurl }}{% post_url 2017-03-15-WeekFour-Mobile VR %})
 
+But before I finish this I want to talk about one interesting problem we had to solve.
+SInce our intention was to use an Vive controller withouth the headset we were facing one simple problem. The recievers for the Controllers are located [inside the headset itself][1]. This is a smart solution because the headset is alwas very close to the headset and will almost never loose signal. But it was a problem for us. The sim
+
+[1]: https://www.ifixit.com/Teardown/HTC+Vive+Teardown/62213#s130831
 
 Last build time: {{ site.time }}
