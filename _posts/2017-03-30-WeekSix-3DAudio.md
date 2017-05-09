@@ -3,7 +3,13 @@ title: "Week Six: Spatial Audio"
 categories: MIX
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+# This week's topic: 3D Audio!
+
+Hmmm. Audio is cool. Don't get me wrong. But is't not exactly inspirational topic that I can talk for hours about. Or at least not in this context.
+We did a small project this week. nothing complicated just a small Google Daydream game. It has a single scene. You are standing on a pllane in the middle of space with the Obslisk from 21. Space Odyssey in teh middle. And if you look at it and click your controller it will start making noise. You can teleport around the scene to expirience spatial audio but it isn't much. It doesn't go beyond that.
+
+Audio ofcourse can be a very interesting topic. It's a surprisingly importatn sense of ours and we probably use it for way more than most of us realize. It's the primary sense that filles your spatial awarness beside your vision. And it's there to tell you what lies beyond your field of view. That's very importatn in VR since we are still workign with fairly limited FOV when it comes to VR. A regular human has FOV of over 180 degrees while both of the current mainstream desktop VR headsets have around 110 degrees. Or less depending of how close can you get the headset to your face.
+Another interesting fact about humans is that as with disynchronization of sight and inner VR we also get slighly motion sick if the sound is not synchronized with our vision or inner ear. So if you are in VR and your audio is not spatial you can very easily get motion sick. The feeling will generally not be as strong as it would be if what you see was out of sync but it can still be bad enought to make you sick.
 
 [Back to main page!]({{ site.url }})
 
