@@ -3,7 +3,7 @@ title: "Week Three: Tracking"
 categories: MIX
 ---
 
-# This week’s topic is Tracking!
+# This week's topic is Tracking!
 
 Let me start by saying that tracking is my most favorite topic in VR/AR. And when I started writing this post the first time, I wrote 700 words of introduction alone. I may try to post it as an alternative version one day, but for now, here is a very compressed version!
 
