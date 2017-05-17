@@ -2,3 +2,5 @@ theme: jekyll-theme-midnight
 timezone: Europe/Copenhagen
 title: [David's devblog for MIX]
 description: [This is my simple devblog for MIX class]
+# Google services
+google_analytics: UA-99324730-1
