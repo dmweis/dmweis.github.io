@@ -24,6 +24,12 @@ My current version is suing a USB controller for the Dynamixel motor and the app
 My other project was created a bit on a whim. I wanted to play with depth sensing cameras and [ROS][1] but I didn't really have a chassis that could support a Kinect and a large enough power source. So I decided to build a copy of the new [Turtlebot][3] from [ROBOTIS][2].
 Since [Turtlebot 3](http://turtlebot3.robotis.com/en/latest/) wasn't official released at the time I started working on this. I had a bit of trouble getting models for the plates. There was an open repository but the models in there weren't ready for 3D printing. But after some searching and modifications of the STL files I managed to get a pretty decent model that also prints really well. Some of the parts for a full Turtlebot were also a bit too expensive for me so I want with cheaper motors, an old Kinect v1 I had laying around instead of a real sense camera, no Lidar. Yet! and only a [Raspberry Pi 3](https://www.raspberrypi.org/) to power it. It's not fully working yet. But here is the prototype for now!
 
+![Custom Turtlebot 3 front]({{site.url}}/images/PrivateProjects/turtlebot_front.jpg)
+
+![Custom Turtlebot 3 back]({{site.url}}/images/PrivateProjects/turtlebot_back.jpg)
+
+Test image with wrong rotation:
+
 ![Turtlebot 3 custom]({{site.url}}/images/PrivateProjects/turtlebot_ros_base_kinect.jpg)
 
 [Back to main page!]({{ site.url }})
