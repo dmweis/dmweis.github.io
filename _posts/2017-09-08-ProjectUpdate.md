@@ -26,6 +26,9 @@ Since [Turtlebot 3](http://turtlebot3.robotis.com/en/latest/) wasn't official re
 
 ![Turtlebot 3 custom]({{site.url}}/images/PrivateProjects/turtlebot_ros_base_kinect.jpg)
 
+[Back to main page!]({{ site.url }})
+
+Last build time: {{ site.time }}
 
 [1]:http://www.ros.org/
 [2]:http://www.robotis.us/
