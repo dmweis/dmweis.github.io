@@ -22,5 +22,3 @@ I expect it would be more developed by the end of summer of 2017. Until then ple
 {% endfor %}
 
 Last build time: {{ site.time }}
-
-<meta name="robots" content="noindex">
