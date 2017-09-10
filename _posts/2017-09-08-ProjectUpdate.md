@@ -19,6 +19,12 @@ My current version is suing a USB controller for the Dynamixel motor and the app
 
 ![Quadruped]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg)
 
+Short demo of the robot walking
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n6QkdBZH_nw" frameborder="0" allowfullscreen></iframe>
+
+Code for this project can be found [here](https://github.com/dmweis/DynamixelServo)
+
 ## Turtlebot / ROS platform
 
 My other project was created a bit on a whim. I wanted to play with depth sensing cameras and [ROS][1] but I didn't really have a chassis that could support a Kinect and a large enough power source. So I decided to build a copy of the new [Turtlebot][3] from [ROBOTIS][2].
