@@ -37,10 +37,6 @@ In the back you can see:
 
 ![Custom Turtlebot 3 back]({{site.url}}/images/PrivateProjects/turtlebot_back.jpg)
 
-Test image with wrong rotation:
-
-![Turtlebot 3 custom]({{site.url}}/images/PrivateProjects/turtlebot_ros_base_kinect.jpg)
-
 [Back to main page!]({{ site.url }})
 
 Last build time: {{ site.time }}
