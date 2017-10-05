@@ -11,9 +11,9 @@ This project was inspired by my constant fascination with walking robots. I alwa
 
 The design is heavily inspired by [PahntomX AX Quadruped Mark II](http://www.trossenrobotics.com/p/PhantomX-AX-12-Quadruped.aspx) by [TrossenRobotics](http://www.trossenrobotics.com/)
 
-For motors I used the [Dynamixel AX-12A](http://www.robotis.us/ax-12a/) from [ROBOTIS][2]
+For motors I used the [Dynamixel AX-12A](http://www.robotis.us/ax-12a/) from [ROBOTIS][1]
 
-My current version is using a USB controller for the Dynamixel motors. The application is written in C# and running on a Windows machine. This is just a temporary solution until I figure things out. I plan on moving the entire system to a OpenCM microcontroller also from [ROBOTIS][2] or a [Raspberry Pi](https://www.raspberrypi.org/) running [ROS](http://www.ros.org/).
+My current version is using a USB controller for the Dynamixel motors. The application is written in C# and running on a Windows machine. This is just a temporary solution until I figure things out. I plan on moving the entire system to a OpenCM microcontroller also from [ROBOTIS][1] or a [Raspberry Pi](https://www.raspberrypi.org/) running [ROS](http://www.ros.org/).
 
 ![Quadruped]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg)
 
@@ -40,3 +40,5 @@ I also plan on releasing the models once I am satisfied with them.
 [Back to main page!]({{ site.url }})
 
 Last build time: {{ site.time }}
+
+[1]:http://www.robotis.us/
