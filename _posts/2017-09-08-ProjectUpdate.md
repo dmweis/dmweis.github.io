@@ -15,7 +15,7 @@ The design is heavily inspired by [PahntomX AX Quadruped Mark II](http://www.tro
 
 For motors I used the [Dynamixel AX-12A](http://www.robotis.us/ax-12a/) from [ROBOTIS][2]
 
-My current version is suing a USB controller for the Dynamixel motor and the application is written in C# and running on a Windows machine. This is just a temporary solution until I figure things out and plan on moving the entire system the the OpenCM platform also from [ROBOTIS][2] with maybe a Raspberry Pi running ROS on top of it for control and navigation 
+My current version is using a USB controller for the Dynamixel motor and the application is written in C# and running on a Windows machine. This is just a temporary solution until I figure things out and plan on moving the entire system the OpenCM platform also from [ROBOTIS][2] with maybe a Raspberry Pi running ROS on top of it for control and navigation 
 
 ![Quadruped]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg)
 
