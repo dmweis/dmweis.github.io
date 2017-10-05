@@ -10,7 +10,7 @@ You can probably notice that many parts of this blog are still filled with Lorem
 
 ### Latest post
 
-- [{{ site.posts.first.title }}]({{ post.url }})
+- [{{ site.posts.first.title }}]({{ site.posts.first.url }})
 
 ### Free time projects
 
