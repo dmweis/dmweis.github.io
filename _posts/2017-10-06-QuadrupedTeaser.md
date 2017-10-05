@@ -21,15 +21,15 @@ Short demo of the robot walking
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A0_89ODIW2Q" frameborder="0" allowfullscreen></iframe>
 
-Short demo of robot being controlled by a Vive Controller
+Robot being controlled by a Vive Controller
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AjRtbsR_hW8" frameborder="0" allowfullscreen></iframe>
 
-Short demo of robot being controlled by a [Leap Motion](https://www.leapmotion.com/) Controller
+Robot being controlled by a [Leap Motion](https://www.leapmotion.com/) Controller
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XQNM-JmyYfI" frameborder="0" allowfullscreen></iframe>
 
-Old demo of the robot walking
+Old demo of the robot walking. This was just following a predefined set of motions.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n6QkdBZH_nw" frameborder="0" allowfullscreen></iframe>
 
