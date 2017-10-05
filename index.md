@@ -6,8 +6,11 @@ title: David Weis MIX devblog
 
 ## _This blog is currently not finished_
 
-You can probably notice that many parts of this blog are still filled with Lorem Ipsum and some features may not be finished yet. That is because this blog is still w work in progress. I am still learning [Jekyll](https://jekyllrb.com/) and I also didn't figure out how I want to use this blog.
-I expect it would be more developed by the end of summer of 2017. Until then please don't consider anything here a final version.
+You can probably notice that many parts of this blog are still filled with Lorem Ipsum and some features may not be finished yet. That is because this blog is still a work in progress. I am still learning [Jekyll](https://jekyllrb.com/) and I also didn't figure out how I want to use this blog yet.
+
+### Latest post
+
+- [{{ site.posts.first.title }}]({{ post.url }})
 
 ### Free time projects
 
