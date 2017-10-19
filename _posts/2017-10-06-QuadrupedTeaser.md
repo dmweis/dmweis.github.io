@@ -17,6 +17,10 @@ My current version is using a USB controller for the Dynamixel motors. The appli
 
 ![Quadruped]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg)
 
+## Quadruped controlled with an Xbox controller
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DRt5kPq_FkQ" frameborder="0" allowfullscreen></iframe>
+
 ## Short demo of the robot walking
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A0_89ODIW2Q" frameborder="0" allowfullscreen></iframe>
