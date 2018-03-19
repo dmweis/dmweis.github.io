@@ -1,6 +1,6 @@
 ---
 title: "Quadruped Teaser"
-categories: PrivateProjects
+categories: Robotics
 ---
 
 # Quadruped teaser!
