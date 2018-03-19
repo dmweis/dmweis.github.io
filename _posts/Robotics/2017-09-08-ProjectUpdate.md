@@ -1,6 +1,6 @@
 ---
 title: "Project updates"
-categories: PrivateProjects
+categories: Robotics
 ---
 
 # Projects I am working on right now

@@ -1,6 +1,6 @@
 ---
 title: "Arm Teaser"
-categories: PrivateProjects
+categories: Robotics
 ---
 
 # My 3D printed robotic arm project
