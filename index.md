@@ -6,9 +6,14 @@ title: David Weis
 
 Hello!  
 Welcome to my personal site!  
-This site doubles as a personal blog/portfolio but it's current only updated sporadically (Whenever I get bored or feel like I having posted in a while)  
+My name is David. I am a Software Engineer originally from Slovakia but educated in Denmark.  
+I work in Air Traffic Management, writing software that makes sure planes don't fall during the day and building robots during the night.  
+
+This site doubles as a personal blog and a light portfolio but it's current only updated sporadically (Mostly whenever I get bored...)  
+
 If you are interested in some of my projects I recommend that you check out my [github](https://github.com/dmweis)  
-Or if you are interested in offering me a job or checking out what am I up to these days you can take a peek at my [LinkedIn](www.linkedin.com/in/david-michael-weis)
+
+Or if you are interested in offering me a job or checking out what am I up to these days you can take a peek at my [LinkedIn](https://www.linkedin.com/in/david-michael-weis/)
 
 ## Latest post
 
