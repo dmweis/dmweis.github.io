@@ -57,7 +57,7 @@ In the back you can see:
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+{% include footer.html %}
 
 [1]:http://www.ros.org/
 [2]:http://www.robotis.us/

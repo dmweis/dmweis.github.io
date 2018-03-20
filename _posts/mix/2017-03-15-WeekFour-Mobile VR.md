@@ -143,4 +143,4 @@ I am very proud of our project. The game itself wasn't very impressive but I fee
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+{% include footer.html %}

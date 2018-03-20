@@ -37,4 +37,4 @@ This proved to be a bit of a problem. Especially since we decided to create two 
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+{% include footer.html %}

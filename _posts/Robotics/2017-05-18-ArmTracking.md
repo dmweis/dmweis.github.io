@@ -18,4 +18,4 @@ This project is heavily inspired (and using some parts) of [Open source Robotic 
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+{% include footer.html %}

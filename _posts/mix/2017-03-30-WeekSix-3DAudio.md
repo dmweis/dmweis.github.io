@@ -23,4 +23,4 @@ Samsung is developing a headset known as [](http://www.roadtovr.com/samsungs-new
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+{% include footer.html %}

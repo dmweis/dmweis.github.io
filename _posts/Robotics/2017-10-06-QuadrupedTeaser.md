@@ -49,6 +49,6 @@ I also plan on releasing the models once I am satisfied with them.
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+{% include footer.html %}
 
 [1]:http://www.robotis.us/

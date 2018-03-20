@@ -35,4 +35,4 @@ As my final words I'd say that I don't feel like I've learn that much with this 
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+{% include footer.html %}
