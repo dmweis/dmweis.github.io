@@ -39,4 +39,4 @@ later we transitioned to running our own RabbitMQ server since when we went to p
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+Last build time: {{ site.time | date_to_long_string: "ordinal" }}

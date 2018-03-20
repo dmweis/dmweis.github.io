@@ -25,4 +25,4 @@ There are also very interesting applications of wearable technology in medical s
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+Last build time: {{ site.time | date_to_long_string: "ordinal" }}

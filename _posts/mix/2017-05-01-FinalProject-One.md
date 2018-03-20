@@ -37,4 +37,4 @@ This proved to be a bit of a problem. Especially since we decided to create two 
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time }}
+Last build time: {{ site.time | date_to_long_string: "ordinal" }}
