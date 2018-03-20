@@ -57,7 +57,7 @@ In the back you can see:
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time | date_to_long_string: "ordinal" }}
+Last build time: {{ site.time }}
 
 [1]:http://www.ros.org/
 [2]:http://www.robotis.us/

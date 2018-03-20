@@ -49,6 +49,6 @@ I also plan on releasing the models once I am satisfied with them.
 
 [Back to main page!]({{ site.url }})
 
-Last build time: {{ site.time | date_to_long_string: "ordinal" }}
+Last build time: {{ site.time }}
 
 [1]:http://www.robotis.us/

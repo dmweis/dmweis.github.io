@@ -25,4 +25,4 @@ Or if you are interested in offering me a job or checking out what am I up to th
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
-Last build time: {{ site.time | date_to_long_string: "ordinal" }}
+Last build time: {{ site.time }}
