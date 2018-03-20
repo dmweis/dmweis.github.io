@@ -26,3 +26,5 @@ Or if you are interested in offering me a job or checking out what am I up to th
 {% endfor %}
 
 Last build time: {{ site.time }}
+
+{% include footer.html %}
