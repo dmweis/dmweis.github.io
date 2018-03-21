@@ -28,9 +28,9 @@
         {% endif %}
 
         <!-- posts have id -->
-        {% unless post.id %}
+        {% if page.id %}
           <p class="view"><a href="{{ site.url }}">Back to Main Page</a></p>
-        {% endunless %}
+        {% endif %}
 
         {% if site.show_downloads %}
           <ul>
