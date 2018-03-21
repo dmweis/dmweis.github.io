@@ -24,9 +24,3 @@ Or if you are interested in offering me a job or checking out what am I up to th
 {% for post in site.categories.Robotics %}
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
-
-## Posts written for my Mixed Reality Course
-
-{% for post in site.categories.MIX reversed %}
-- [{{ post.title }}]({{ post.url }})
-{% endfor %}
