@@ -27,12 +27,12 @@ The most obvios change is the addition of two more legs. THe hexapodal design al
 
 #### Main body of the new robot
 
-<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a5264dd8a20f0d670?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
+<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a5264dd8a20f0d670?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe><br>
 
 #### New legs for the robot
 
-<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a7cf9b78f9a8736f1?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
-  
+<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a7cf9b78f9a8736f1?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe><br>
+
 ### New software platform
 
 I amde a decision to switch my software platform to [ROS - Robot Operating System](http://www.ros.org/). I did this for multiple reasons. It's a more Linux friendly platform, It allows me to use a much more modular design, it's a lot closer to the industry standard for robotics, and it allows me to quickly and easily add new sensor and devices (Such as the Kinect sensor you can see in the image above ^) since most of the already have a working ROS driver. Another really important reason for switch was that I really wanted to learn ROS and was getting bored of just using a boring car platform to experiment on.
