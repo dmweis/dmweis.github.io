@@ -8,7 +8,7 @@ categories: Robotics
 If you look at my previous posts you can see my [3D printed Quadruped robot]({{ site.baseurl }}{% post_url 2017-10-06-QuadrupedTeaser %})!  
 I promised I would write a more comprehensive description but never got around to doing it. Most because the project very quickly evolved past that stage and I was too busy working on it to write about it. But here is a short description:
 
-## Original quadruped
+## Original Quadruped
 
 The original quadruped robot was the first iteration of my long-term dream to build a legged robot. It had 4 legs. And was controlled by an ASP.NET core web application running on a Raspberry Pi or a desktop computer. It was a fun project. But after a while I realized that ASP.NET core is far from the ideal platform (Even if it was fun getting it to work on a raspberry pi) and I wanted to learn more about ROS. Another part was the body. The original body was heavily inspired by the [PahntomX AX Quadruped Mark II](http://www.trossenrobotics.com/p/PhantomX-AX-12-Quadruped.aspx) by [TrossenRobotics](http://www.trossenrobotics.com/). The new body is also heavily inspired by its larger six-legged brother but this time none of the parts are directly modeled after anything.
 
