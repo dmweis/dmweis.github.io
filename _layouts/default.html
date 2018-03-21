@@ -27,6 +27,10 @@
           <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
+        {% if site.github.is_user_page %}
+          <p class="view"><a href="https://www.linkedin.com/in/david-michael-weis/">View My LinkedIn Profile</a></p>
+        {% endif %}
+
         <!-- posts have id -->
         {% if page.id %}
           <p class="view"><a href="{{ site.url }}">Back to Main Page</a></p>
