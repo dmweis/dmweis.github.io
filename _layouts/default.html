@@ -27,7 +27,9 @@
           <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
-        <p class="view"><a href="{{ site.url }}">Back to Main Page</a></p>
+        {% unless page.url == "/" %}
+          <p class="view"><a href="{{ site.url }}">Back to Main Page</a></p>
+        {% endif %}
 
         {% if site.show_downloads %}
           <ul>
