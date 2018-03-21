@@ -27,7 +27,7 @@ My current version is using a USB controller for the Dynamixel motors. The appli
 
 ## Controlled by a Raspberry Pi 3 sitting on top of the robot
 
-`movement in this video is a bit slow because of the heavy battery bank used to power the Pi`
+`Movement in this video is a bit slow because of the heavy battery bank used to power the Pi`
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oJVYH1aEE_Q" frameborder="0" allowfullscreen></iframe>
 
