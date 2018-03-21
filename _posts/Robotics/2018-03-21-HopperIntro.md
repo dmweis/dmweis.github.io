@@ -26,12 +26,10 @@ The new body is again entirely modeled by me. But this time it's done without a 
 The most obvios change is the addition of two more legs. THe hexapodal design allows more stable movement. And upgrade of the core of the robot. It now has a fully working battery bay where you can easy and quickly switch batteries. Main controller has also been now integrated inside of the main body. And as a cherry on top the top plate has screw holes and magnetic mounts for any equipment that you might want to put on top.
 
 _main body of the new robot_
-
-<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a5264dd8a20f0d670?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a5264dd8a20f0d670?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
 
 _new legs for the robot_
-
-<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a7cf9b78f9a8736f1?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a7cf9b78f9a8736f1?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
 
 ### New software platform
 
