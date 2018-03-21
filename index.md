@@ -22,3 +22,7 @@ Or if you are interested in offering me a job or checking out what am I up to th
 {% for post in site.categories.Robotics %}
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
+
+## MIX
+
+If you are looking for posts written for my Mixed reality Course as VIA you can find them [here]({{ site.baseurl }}{% link pages/mix_posts.md %})
