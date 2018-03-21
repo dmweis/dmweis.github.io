@@ -4,7 +4,7 @@ title: David Weis
 
 # Hello, I'm David!
 
-I am a Software Engineer from Slovakia but currently residing in Denmark.  
+I am a Software Engineer from Slovakia, currently residing in Denmark.  
 I work in Air Traffic Management, writing software that makes sure planes don't fall during the day and building robots during the night.  
 
 This site doubles as a personal blog and a light portfolio but it's current only updated sporadically (Mostly whenever I get bored...)  
