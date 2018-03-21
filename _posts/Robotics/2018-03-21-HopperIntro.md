@@ -37,7 +37,7 @@ _new legs for the robot_
 
 I amde a decision to switch my software platform to [ROS - Robot Operating System](http://www.ros.org/). I did this for multiple reasons. It's a more Linux friendly platform, It allows me to use a much more modular design, it's a lot closer to the industry standard for robotics, and it allows me to quickly and easily add new sensor and devices (Such as the Kinect sensor you can see in the image above ^) since most of the already have a working ROS driver. Another really important reason for switch was that I really wanted to learn ROS and was getting bored of just using a boring car platform to experiment on.
 
-I am very new to ROS and python and C++ as well so I don't think my work is worth much so far but you can find my entire ROS stack for my robot [here on my GitHub](https://github.com/dmweis/Hopper_ROS). It's mostly written in python with the web interfaces written in JavaScript with Node using [RosNodeJs](http://wiki.ros.org/rosnodejs).I plan on separating parts of it into multiple nodes to make it more ROS like and also rewriting parts of it C++ once I feel comfortable with where they are.
+I am very new to ROS and python and C++ as well so I don't think my work is worth much so far but you can find my entire ROS stack for my robot [here on my GitHub](https://github.com/dmweis/Hopper_ROS). It's mostly written in python with the web interfaces written in JavaScript with Node using [RosNodeJs](http://wiki.ros.org/rosnodejs). I plan on separating parts of it into multiple nodes to make it more ROS like and also rewriting parts of it C++ once I feel comfortable with where they are.
 
 ### Why Hopper?
 
