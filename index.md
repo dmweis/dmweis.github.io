@@ -25,4 +25,4 @@ Or if you are interested in offering me a job or checking out what am I up to th
 
 ## MIX
 
-If you are looking for posts written for my Mixed reality Course as VIA you can find them [here]({{ site.baseurl }}{% link pages/mix_posts.md %})
+If you are looking for posts written for my Mixed reality Course at VIA you can find them [here]({{ site.baseurl }}{% link pages/mix_posts.md %})
