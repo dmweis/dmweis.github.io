@@ -27,7 +27,8 @@
           <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
-        {% unless page.url == "/" %}
+        <!-- posts have id -->
+        {% unless post.id %}
           <p class="view"><a href="{{ site.url }}">Back to Main Page</a></p>
         {% endif %}
 
