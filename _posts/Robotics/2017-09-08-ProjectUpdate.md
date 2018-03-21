@@ -57,8 +57,6 @@ In the back you can see:
 
 [Back to main page!]({{ site.url }})
 
-{% include footer.html %}
-
 [1]:http://www.ros.org/
 [2]:http://www.robotis.us/
 [3]:http://www.turtlebot.com/

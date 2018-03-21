@@ -25,4 +25,4 @@ Or if you are interested in offering me a job or checking out what am I up to th
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
-{% include footer.html %}
+

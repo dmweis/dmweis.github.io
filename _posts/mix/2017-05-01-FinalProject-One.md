@@ -36,5 +36,3 @@ The side of the hero is much more straight forward. At least for someone who has
 This proved to be a bit of a problem. Especially since we decided to create two separate applications for the GM and Hero part of the game. But luckily both of us already had experience with similar distributed applications and we ended up find an almost perfect solution that worked out flawlessly for us.
 
 [Back to main page!]({{ site.url }})
-
-{% include footer.html %}

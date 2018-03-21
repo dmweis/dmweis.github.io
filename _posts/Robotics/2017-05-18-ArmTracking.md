@@ -17,5 +17,3 @@ This project is heavily inspired (and using some parts) of [Open source Robotic 
 [Link to a simpler python web-interface](https://github.com/dmweis/Dum-E)
 
 [Back to main page!]({{ site.url }})
-
-{% include footer.html %}

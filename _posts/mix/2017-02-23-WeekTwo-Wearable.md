@@ -24,5 +24,3 @@ I would actually gladly wear a HoloLens everyday if I didn't get strange looks i
 There are also very interesting applications of wearable technology in medical sector as well. Even if I am not entirely sure if you would still classify them as wearable but under skin medical pumps that automatically release medication in regulated doses, insulin pumps and many other.
 
 [Back to main page!]({{ site.url }})
-
-{% include footer.html %}

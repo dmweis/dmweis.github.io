@@ -38,5 +38,3 @@ Since we started by running our system on two computers we used a RabbitMQ as a 
 later we transitioned to running our own RabbitMQ server since when we went to present our game we weren't sure if we are going to have access to the internet and running a local server was very easy as well.
 
 [Back to main page!]({{ site.url }})
-
-{% include footer.html %}

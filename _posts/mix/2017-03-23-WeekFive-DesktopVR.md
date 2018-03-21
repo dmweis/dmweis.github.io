@@ -36,5 +36,3 @@ and from there it became very easy to write a simple C# script that read the inp
 
 
 [Back to main page!]({{ site.url }})
-
-{% include footer.html %}

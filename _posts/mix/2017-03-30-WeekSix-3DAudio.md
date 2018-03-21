@@ -22,5 +22,3 @@ Interestingly enough audio in the future can be used for a lot more than just...
 Samsung is developing a headset known as [](http://www.roadtovr.com/samsungs-new-headphones-trick-your-inner-ear-to-move-you-in-vr/) that uses [galvanic vestibular stimulation](https://en.wikipedia.org/wiki/Galvanic_vestibular_stimulation) to _"trick"_ your brain into not getting motion sick.
 
 [Back to main page!]({{ site.url }})
-
-{% include footer.html %}

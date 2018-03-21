@@ -5,4 +5,4 @@ categories: MIX
 
 [Back to main page!]({{ site.url }})
 
-{% include footer.html %}
+
