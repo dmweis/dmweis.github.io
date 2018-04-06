@@ -2,7 +2,6 @@ div.gallery {
     margin: 2px;
     float: left;
     height: 180px;
-    max-width: 180px;
 }
 
 div.gallery:hover {
@@ -12,6 +11,5 @@ div.gallery:hover {
 div.gallery img {
     height: 100%;
     width: auto;
-    max-width: 100%;
     display: block;
 }
