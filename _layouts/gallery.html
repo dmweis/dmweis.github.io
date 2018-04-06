@@ -10,8 +10,7 @@ layout: default
             <div class="gallery">
                 <a href="{{ site.url }}/{{ gallery.folder_path }}/{{ image.relative_path }}" data-lightbox="gallery.name" data-title="{{ image.text }}">
                     <img src="{{ site.url }}/{{ gallery.folder_path }}/{{ image.relative_path_thumbnail }}">
-                </a><br>
-                {{image.text}}
+                </a>
             </div>
         {% endfor %}
     {% endif %}
