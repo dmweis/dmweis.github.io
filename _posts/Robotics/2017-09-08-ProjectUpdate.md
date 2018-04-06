@@ -17,7 +17,7 @@ For motors I used the [Dynamixel AX-12A](http://www.robotis.us/ax-12a/) from [RO
 
 My current version is using a USB controller for the Dynamixel motor and the application is written in C# and running on a Windows machine. This is just a temporary solution until I figure things out and plan on moving the entire system the OpenCM platform also from [ROBOTIS][2] with maybe a Raspberry Pi running ROS on top of it for control and navigation 
 
-![Quadruped]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg)
+[![Quadruped]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg)]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg){: data-lightbox="Quadruped" data-title="Quadruped"}
 
 Short demo of the robot walking
 
@@ -44,7 +44,7 @@ Since [Turtlebot 3](http://turtlebot3.robotis.com/en/latest/) wasn't official re
 
 In the front you can see the Kinect sensor that's currently unplugged
 
-![Custom Turtlebot 3 front]({{site.url}}/images/PrivateProjects/turtlebot_front.jpg)
+[![Custom Turtlebot 3 front]({{site.url}}/images/PrivateProjects/turtlebot_front.jpg)]({{site.url}}/images/PrivateProjects/turtlebot_front.jpg){: data-lightbox="Turtlebot" data-title="Custom Turtlebot 3 front"}
 
 In the back you can see:
 
@@ -53,7 +53,7 @@ In the back you can see:
 - [L298n](https://www.sparkfun.com/datasheets/Robotics/L298_H_Bridge.pdf) H-Bridge for controlling the motors
 - U-Blox GPS module
 
-![Custom Turtlebot 3 back]({{site.url}}/images/PrivateProjects/turtlebot_back.jpg)
+[![Custom Turtlebot 3 back]({{site.url}}/images/PrivateProjects/turtlebot_back.jpg)]({{site.url}}/images/PrivateProjects/turtlebot_back.jpg){: data-lightbox="Turtlebot" data-title="Custom Turtlebot 3 back"}
 
 [Back to main page!]({{ site.url }})
 

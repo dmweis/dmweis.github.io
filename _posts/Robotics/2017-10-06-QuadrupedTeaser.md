@@ -15,7 +15,7 @@ For motors I used the [Dynamixel AX-12A](http://www.robotis.us/ax-12a/) from [RO
 
 My current version is using a USB controller for the Dynamixel motors. The application is written in C# and running on a Windows machine. This is just a temporary solution until I figure things out. I plan on moving the entire system to a OpenCM microcontroller also from [ROBOTIS][1] or a [Raspberry Pi](https://www.raspberrypi.org/) running [ROS](http://www.ros.org/).
 
-![Quadruped]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg)
+[![Quadruped]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg)]({{site.url}}/images/PrivateProjects/quadruped_simple_image.jpg){: data-lightbox="Quadruped" data-title="Quadruped"}
 
 ## Quadruped controlled with an Xbox controller
 
