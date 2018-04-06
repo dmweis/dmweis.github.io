@@ -8,10 +8,10 @@ layout: default
         <h1>{{ gallery.description }}</h1>
         {% for image in gallery.images %}
             <div class="gallery">
-                {{image.text}}<br>
                 <a href="{{ site.url }}/{{ gallery.folder_path }}/{{ image.relative_path }}" data-lightbox="gallery.name" data-title="{{ image.text }}">
                     <img src="{{ site.url }}/{{ gallery.folder_path }}/{{ image.relative_path_thumbnail }}">
-                </a>
+                </a><br>
+                {{image.text}}
             </div>
         {% endfor %}
     {% endif %}
