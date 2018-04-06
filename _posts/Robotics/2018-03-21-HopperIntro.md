@@ -19,9 +19,7 @@ But here is a short summary
 
 ### New body
 
-![Hopper]({{site.url}}/images/Robotics/HopperIntro/Hopper_hexapod_kinect.jpg)
-
-[Hopper]({{site.url}}/images/Robotics/HopperIntro/Hopper_hexapod_kinect.jpg){: data-lightbox="hopper" data-title="Hopper the hexapod robot"}
+[![Hopper]({{site.url}}/images/Robotics/HopperIntro/Hopper_hexapod_kinect.jpg)]({{site.url}}/images/Robotics/HopperIntro/Hopper_hexapod_kinect.jpg){: data-lightbox="hopper" data-title="Hopper the hexapod robot"}
 
 The new body is again entirely modeled by me. But this time it's done without a base I was trying to copy. I have also learned a lot more about CAD so the design is a lot more parametric and higher quality.
 
