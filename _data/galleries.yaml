@@ -1,7 +1,45 @@
 - id: gallery1
   name: Hopper the Hexapod
   description: All images of hopper during it's evolution
-  folder_path: /images/Robotics
+  folder_path: /images/Robotics/HopperGallery
   images:
-  - relative_path: HopperIntro/Hopper_hexapod_kinect.jpg
-    text: Early quadruped version
+  - relative_path: 20170706_221301-min.jpg
+    text: placeholder
+  - relative_path: 20170908_135515-min.jpg
+    text: placeholder
+  - relative_path: 20171029_122836-min.jpg
+    text: placeholder
+  - relative_path: 20171111_210040-min.jpg
+    text: placeholder
+  - relative_path: 20171205_195043-min.jpg
+    text: placeholder
+  - relative_path: 20180123_125049-min.jpg
+    text: placeholder
+  - relative_path: 20180128_144922-min.jpg
+    text: placeholder
+  - relative_path: 20180131_002008-min.jpg
+    text: placeholder
+  - relative_path: 20180201_033818-min.jpg
+    text: placeholder
+  - relative_path: 20180207_084152-min.jpg
+    text: placeholder
+  - relative_path: 20180224_144914-min.jpg
+    text: placeholder
+  - relative_path: 20180224_150447-min.jpg
+    text: placeholder
+  - relative_path: 20180325_180159-min.jpg
+    text: placeholder
+  - relative_path: 20180325_180205-min.jpg
+    text: placeholder
+  - relative_path: 20180325_180254-min.jpg
+    text: placeholder
+  - relative_path: 20180325_180347-min.jpg
+    text: placeholder
+  - relative_path: 20180325_180507-min.jpg
+    text: placeholder
+  - relative_path: 20180325_180557-min.jpg
+    text: placeholder
+  - relative_path: 20180325_180613-min.jpg
+    text: placeholder
+  - relative_path: 20180325_180715-min.jpg
+    text: placeholder
