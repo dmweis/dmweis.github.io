@@ -9,9 +9,6 @@ div.gallery:hover {
 }
 
 div.gallery img {
-    width: auto;
     height: 180px;
-    background-position: center center;
-    background-repeat: no-repeat;
     overflow: hidden;
 }
