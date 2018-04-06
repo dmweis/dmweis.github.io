@@ -6,7 +6,7 @@ div.gallery {
 }
 
 div.gallery:hover {
-    opacity: 1;
+    opacity: 0.4;
 }
 
 div.gallery img {
