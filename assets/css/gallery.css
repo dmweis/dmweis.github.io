@@ -2,6 +2,7 @@ div.gallery {
     margin: 2px;
     float: left;
     height: 180px;
+    max-width: 180px;
 }
 
 div.gallery:hover {
