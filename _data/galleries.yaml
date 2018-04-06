@@ -1,0 +1,7 @@
+- id: gallery1
+  name: Hopper the Hexapod
+  description: All images of hopper during it's evolution
+  folder_path: /images/Robotics
+  images:
+  - relative_path: HopperIntro/Hopper_hexapod_kinect.jpg
+    text: Early quadruped version
