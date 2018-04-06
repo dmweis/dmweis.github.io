@@ -21,6 +21,8 @@ But here is a short summary
 
 ![Hopper]({{site.url}}/images/Robotics/HopperIntro/Hopper_hexapod_kinect.jpg)
 
+<a href="{{site.url}}/images/Robotics/HopperIntro/Hopper_hexapod_kinect.jpg" data-lightbox="hopper" data-title="Hopper the hexapod robot">Hopper</a>
+
 The new body is again entirely modeled by me. But this time it's done without a base I was trying to copy. I have also learned a lot more about CAD so the design is a lot more parametric and higher quality.
 
 The most obvious change is the addition of two more legs. The hexapod design allows more stable movement. And upgrade of the core of the robot. It now has a fully working battery bay where you can easy and quickly switch batteries. Main controller has also been now integrated inside of the main body. And as a cherry on top the top plate has screw holes and magnetic mounts for any equipment that you might want to put on top.
