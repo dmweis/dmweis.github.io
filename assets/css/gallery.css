@@ -1,7 +1,7 @@
 div.gallery {
     margin: 2px;
     float: left;
-    width: 180px;
+    height: 180px;
 }
 
 div.gallery:hover {
@@ -9,6 +9,7 @@ div.gallery:hover {
 }
 
 div.gallery img {
-    height: 180px;
-    overflow: hidden;
+    height: 100%;
+    width: auto;
+    display: block;
 }
