@@ -1,6 +1,6 @@
 - id: gallery1
   name: Hopper the Hexapod
-  description: All images of hopper during it's evolution
+  description: Hopper during it's evolution
   folder_path: /images/Robotics/HopperGallery
   images:
   - relative_path: 20170706_221301-min.jpg
