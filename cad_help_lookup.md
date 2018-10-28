@@ -17,3 +17,7 @@ permalink: /cad.html
 ### Magnet
 
 [![Magnet sizes]({{site.url}}/images/CadLookUp/Magnet.PNG)]({{site.url}}/images/CadLookUp/Magnet.PNG){: data-lightbox="CAD" data-title="Magnet sizes"}
+
+### AX-12A
+
+[![AX-12A dimensions]({{site.url}}/images/CadLookUp/AX-12A.PNG)]({{site.url}}/images/CadLookUp/AX-12A.PNG){: data-lightbox="CAD" data-title="AX-12A dimensions"}
