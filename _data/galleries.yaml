@@ -5,28 +5,28 @@
   images:
   - relative_path: 20170706_221301-min.jpg
     relative_path_thumbnail: thumbnails/20170706_221301_tn.jpg
-    text: placeholder
+    text: First version during building
   - relative_path: 20170908_135515-min.jpg
     relative_path_thumbnail: thumbnails/20170908_135515_tn.jpg
     text: placeholder
   - relative_path: 20171029_122836-min.jpg
     relative_path_thumbnail: thumbnails/20171029_122836_tn.jpg
-    text: placeholder
+    text: Quadruped with a camera turret
   - relative_path: 20171111_210040-min.jpg
     relative_path_thumbnail: thumbnails/20171111_210040_tn.jpg
-    text: placeholder
+    text: Bottom plate of the original quadruped
   - relative_path: 20171205_195043-min.jpg
     relative_path_thumbnail: thumbnails/20171205_195043_tn.jpg
-    text: placeholder
+    text: Batteries
   - relative_path: 20180123_125049-min.jpg
     relative_path_thumbnail: thumbnails/20180123_125049_tn.jpg
-    text: placeholder
+    text: Dynamixel motors
   - relative_path: 20180128_144922-min.jpg
     relative_path_thumbnail: thumbnails/20180128_144922_tn.jpg
     text: placeholder
   - relative_path: 20180131_002008-min.jpg
     relative_path_thumbnail: thumbnails/20180131_002008_tn.jpg
-    text: placeholder
+    text: Rebuilding into a hexapod
   - relative_path: 20180201_033818-min.jpg
     relative_path_thumbnail: thumbnails/20180201_033818_tn.jpg
     text: placeholder
@@ -63,3 +63,9 @@
   - relative_path: 20180325_180715-min.jpg
     relative_path_thumbnail: thumbnails/20180325_180715_tn.jpg
     text: placeholder
+  - relative_path: last_1.jpg
+    relative_path_thumbnail: thumbnails/last_1_tn.jpg
+    text: One of the last pictures before taking it apart
+  - relative_path: last_2.jpg
+    relative_path_thumbnail: thumbnails/last_2_tn.jpg
+    text: One of the last pictures before taking it apart
