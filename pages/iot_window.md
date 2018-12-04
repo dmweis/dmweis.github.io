@@ -1,6 +1,6 @@
 ---
 title: IOT Window
-permalink: /window.html
+permalink: /window
 ---
 
 # IOT window
