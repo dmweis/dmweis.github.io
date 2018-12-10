@@ -26,7 +26,7 @@ You'll need to following parts:
 * ESP-8266
     - You can use any board of your choice
 * actuator for the window
-    - We are using a TowerPro MG-945 servo in our project but depending on your needs you can use any actuator that fits your usecase
+    - We are using a TowerPro MG-945 servo in our project but depending on your needs you can use any actuator that fits your use case
 * DHT-22 or DHT-11 times 2
     - Since we want to measure temperature outside and inside of the window we need at least two temperature sensors. In our case we went with a DHT-22. It's a reliable sensor, cheap and one of our team members had previous experience with using it
 * Server for OpenHAB and MQTT broker
@@ -44,6 +44,9 @@ System Diagram:
 
 [![System diagram]({{site.url}}/images/iot_window/system_diagram.png)]({{site.url}}/images/iot_window/system_diagram.png){: data-lightbox="Turtlebot" data-title="System diagram"}
 
+<details><summary>Click to show full code</summary>
+<p>
+
 ```c
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -56,7 +59,6 @@ System Diagram:
 DHT dht_in(DHTPIN_in, DHTTYPE);
 DHT dht_out(DHTPIN_out, DHTTYPE);
 Servo myservo;
-
 
 //Update these with values suitable for your network.
 const char* ssid = "SSID";
@@ -197,6 +199,9 @@ void loop() {
   timeSinceLastRead += 100;
 }
 ```
+
+</p>
+</details>
 
 ## Authors:
 
