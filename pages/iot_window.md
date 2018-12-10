@@ -15,7 +15,10 @@ permalink: /window
 
 ## Instructions for building
 
-
+Connect raspberry pi to wifi
+Start start openhab on pi terminal command: sudo systemctl start openhab2.service
+Start the mqtt server on raspberry pi terminal command: mosquitto
+Connect esp to wifi and raspberry pi, edit SSID passpoword and raspberry pi ip adress in the esp code
 
 ## Hardware design
 
@@ -32,6 +35,10 @@ You'll need to following parts:
 * Server for OpenHAB and MQTT broker
     - We used a raspberry pi as our server but at home this can be running on any computer.
 
+Wiring diagram:
+
+[![Circuit diagram]({{site.url}}/images/iot_window/circuit_diagram.png)]({{site.url}}/images/iot_window/circuit_diagram.png){: data-lightbox="Turtlebot" data-title="Circuit diagram"}
+
 The prototype window we created was made out of laser cut acrylic and and few 3D printed parts.
 
 <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a6b4c92f8b2722c80?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
@@ -44,23 +51,14 @@ System Diagram:
 
 [![System diagram]({{site.url}}/images/iot_window/system_diagram.png)]({{site.url}}/images/iot_window/system_diagram.png){: data-lightbox="Turtlebot" data-title="System diagram"}
 
-<details><summary>Click to show full code</summary>
-<p>
-
-
-```python
-print("hello world!")
-```
-
-</p>
-</details>
+Entire code for the ESP can be found [here](https://gist.github.com/dmweis/b9399950ffe3b184748f0e64069d9eb9)
 
 ```c
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include "DHT.h"
 #include <Servo.h>
-#define DHTPIN_in 2       //What digital pin the first DHT22 is conected to // this is pin 4 on the esp
+#define DHTPIN_in 2       //What digital pin the first DHT22 is connected to // this is pin 4 on the esp
 #define DHTPIN_out 4      //What digital pin the second DHT22 is conected to // this is pin 2 on the esp
 #define DHTTYPE DHT22     //DHT22 sensor
 // Inside and outside sensors
@@ -208,6 +206,10 @@ void loop() {
   timeSinceLastRead += 100;
 }
 ```
+
+## Conclusion
+
+We created an IoT system as specified in our project specification, utilising two sensors in the form of the DHT22 Temperature and Humidity Sensor and an actuator, in the form of a servo motor. The system is controlled through OpenHAB, where the user is presented with a UI that allows for a window to be opened or closed remotely depending on a desired temperature. Both temperature and humidity are displayed on the UI.
 
 ## Authors:
 
