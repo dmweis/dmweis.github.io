@@ -47,6 +47,14 @@ System Diagram:
 <details><summary>Click to show full code</summary>
 <p>
 
+
+```python
+print("hello world!")
+```
+
+</p>
+</details>
+
 ```c
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -59,6 +67,7 @@ System Diagram:
 DHT dht_in(DHTPIN_in, DHTTYPE);
 DHT dht_out(DHTPIN_out, DHTTYPE);
 Servo myservo;
+
 
 //Update these with values suitable for your network.
 const char* ssid = "SSID";
@@ -199,9 +208,6 @@ void loop() {
   timeSinceLastRead += 100;
 }
 ```
-
-</p>
-</details>
 
 ## Authors:
 
