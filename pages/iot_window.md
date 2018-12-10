@@ -40,10 +40,166 @@ The prototype window we created was made out of laser cut acrylic and and few 3D
 
 ## Software design
 
-[![System diagram]({{site.url}}/images/iot_window/system_diagram.png)]({{site.url}}/images/iot_window/system_diagram.png){: data-lightbox="Turtlebot" data-title="Custom Turtlebot 3 front"}
+System Diagram:
+
+[![System diagram]({{site.url}}/images/iot_window/system_diagram.png)]({{site.url}}/images/iot_window/system_diagram.png){: data-lightbox="Turtlebot" data-title="System diagram"}
+
+```c
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+#include "DHT.h"
+#include <Servo.h>
+#define DHTPIN_in 2       //What digital pin the first DHT22 is conected to // this is pin 4 on the esp
+#define DHTPIN_out 4      //What digital pin the second DHT22 is conected to // this is pin 2 on the esp
+#define DHTTYPE DHT22     //DHT22 sensor
+// Inside and outside sensors
+DHT dht_in(DHTPIN_in, DHTTYPE);
+DHT dht_out(DHTPIN_out, DHTTYPE);
+Servo myservo;
+
+
+//Update these with values suitable for your network.
+const char* ssid = "SSID";
+const char* password = "WIFI_PASSWORD";
+const char* mqtt_server = "MQTT_SERVER_IP_HOSTNAME";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+long lastMsg = 0;
+char msg[50];
+char msg1[50];
+char msg2[50];
+char msg3[50];
+int value = 0;
+
+void setup_wifi() {
+  delay(10);
+  // We start by connecting to a WiFi network
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  randomSeed(micros());
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+
+  if (strcmp(topic, "window") == 0){
+    if ((char)payload[0] == '1') {
+      Serial.println("Closing");
+    myservo.write(180);
+  } else {
+      Serial.println("Opening");
+    myservo.write(150);
+  }
+    
+  }
+}
+
+void reconnect() {
+  //Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    //Create a random client ID
+    String clientId = "ESP8266Client-";
+    clientId += String(random(0xffff), HEX);
+    //Attempt to connect
+    if (client.connect(clientId.c_str())) {
+      Serial.println("connected");
+      client.subscribe("window");
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+  setup_wifi();
+  myservo.attach(13);
+  myservo.write(180);
+  client.setServer(mqtt_server, 1883);
+  client.setCallback(callback);
+  dht_in.begin();
+  dht_out.begin();
+  Serial.println("Device Started");
+  Serial.println("-------------------------------------");
+  Serial.println("Running DHT!");
+  Serial.println("-------------------------------------");
+
+}
+
+int timeSinceLastRead = 0;
+void loop() {
+
+  if (!client.connected()) {
+    reconnect();
+  }
+  client.loop();
+    //Report every 2 seconds.
+  if(timeSinceLastRead > 2000) {
+    Serial.println("Starting reading!!!");
+    //Reading temperature or humidity takes about 250 milliseconds!
+    //Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+    float h_in = dht_in.readHumidity();
+    float h_out = dht_out.readHumidity();
+    //Read temperature as Celsius (the default)
+    float t_in = dht_in.readTemperature();
+    float t_out = dht_out.readTemperature();
+  
+
+    //Publish inside and outside temp and humidity
+    snprintf (msg, 50, "Temperature Inside: %f", t_in);
+    Serial.print("Publish message: ");
+    Serial.println(msg);
+    client.publish("Bedroom_Temperature", msg);
+    
+    snprintf (msg1, 50, "Humidity Inside: %f", h_in);
+    Serial.print("Publish message: ");
+    Serial.println(msg1);
+    client.publish("Bedroom_Humidity", msg1);
+
+    snprintf (msg2, 50, "Temperature Outside: %f", t_out);
+    Serial.print("Publish message: ");
+    Serial.println(msg2);
+    client.publish("Backyard_Temperature", msg2);
+    
+    snprintf (msg3, 50, "Humidity Outside: %f", h_out);
+    Serial.print("Publish message: ");
+    Serial.println(msg3);
+    client.publish("Backyard_Humidity", msg3);
+    timeSinceLastRead = 0;
+    }
+  delay(100);
+  timeSinceLastRead += 100;
+}
+```
 
 ## Authors:
 
-Christopher Brown
-Scott Mathers
-[David Weis](DavidMakesRobots.com)
+Christopher Brown  
+Scott Mathers  
+[David Weis](DavidMakesRobots.com)  
