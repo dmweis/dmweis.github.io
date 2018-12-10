@@ -56,16 +56,6 @@ Entire code for the ESP can be found [here](https://gist.github.com/dmweis/b9399
 ```c
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#include "DHT.h"
-#include <Servo.h>
-#define DHTPIN_in 2       //What digital pin the first DHT22 is connected to // this is pin 4 on the esp
-#define DHTPIN_out 4      //What digital pin the second DHT22 is conected to // this is pin 2 on the esp
-#define DHTTYPE DHT22     //DHT22 sensor
-// Inside and outside sensors
-DHT dht_in(DHTPIN_in, DHTTYPE);
-DHT dht_out(DHTPIN_out, DHTTYPE);
-Servo myservo;
-
 
 //Update these with values suitable for your network.
 const char* ssid = "SSID";
@@ -74,12 +64,6 @@ const char* mqtt_server = "MQTT_SERVER_IP_HOSTNAME";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
-long lastMsg = 0;
-char msg[50];
-char msg1[50];
-char msg2[50];
-char msg3[50];
-int value = 0;
 
 void setup_wifi() {
   delay(10);
@@ -87,16 +71,12 @@ void setup_wifi() {
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
-
   WiFi.begin(ssid, password);
-
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
-
   randomSeed(micros());
-
   Serial.println("");
   Serial.println("WiFi connected");
   Serial.println("IP address: ");
@@ -104,14 +84,6 @@ void setup_wifi() {
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("Message arrived [");
-  Serial.print(topic);
-  Serial.print("] ");
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)payload[i]);
-  }
-  Serial.println();
-
   if (strcmp(topic, "window") == 0){
     if ((char)payload[0] == '1') {
       Serial.println("Closing");
@@ -120,7 +92,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
       Serial.println("Opening");
     myservo.write(150);
   }
-    
   }
 }
 
@@ -148,20 +119,12 @@ void reconnect() {
 void setup() {
   Serial.begin(9600);
   setup_wifi();
-  myservo.attach(13);
-  myservo.write(180);
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
-  dht_in.begin();
-  dht_out.begin();
-  Serial.println("Device Started");
-  Serial.println("-------------------------------------");
   Serial.println("Running DHT!");
   Serial.println("-------------------------------------");
-
 }
 
-int timeSinceLastRead = 0;
 void loop() {
 
   if (!client.connected()) {
@@ -170,36 +133,8 @@ void loop() {
   client.loop();
     //Report every 2 seconds.
   if(timeSinceLastRead > 2000) {
-    Serial.println("Starting reading!!!");
-    //Reading temperature or humidity takes about 250 milliseconds!
-    //Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
-    float h_in = dht_in.readHumidity();
-    float h_out = dht_out.readHumidity();
-    //Read temperature as Celsius (the default)
-    float t_in = dht_in.readTemperature();
-    float t_out = dht_out.readTemperature();
-  
 
-    //Publish inside and outside temp and humidity
-    snprintf (msg, 50, "Temperature Inside: %f", t_in);
-    Serial.print("Publish message: ");
-    Serial.println(msg);
-    client.publish("Bedroom_Temperature", msg);
-    
-    snprintf (msg1, 50, "Humidity Inside: %f", h_in);
-    Serial.print("Publish message: ");
-    Serial.println(msg1);
-    client.publish("Bedroom_Humidity", msg1);
-
-    snprintf (msg2, 50, "Temperature Outside: %f", t_out);
-    Serial.print("Publish message: ");
-    Serial.println(msg2);
-    client.publish("Backyard_Temperature", msg2);
-    
-    snprintf (msg3, 50, "Humidity Outside: %f", h_out);
-    Serial.print("Publish message: ");
-    Serial.println(msg3);
-    client.publish("Backyard_Humidity", msg3);
+    client.publish("test_topic", "Test message");
     timeSinceLastRead = 0;
     }
   delay(100);
@@ -210,6 +145,16 @@ void loop() {
 ## Conclusion
 
 We created an IoT system as specified in our project specification, utilising two sensors in the form of the DHT22 Temperature and Humidity Sensor and an actuator, in the form of a servo motor. The system is controlled through OpenHAB, where the user is presented with a UI that allows for a window to be opened or closed remotely depending on a desired temperature. Both temperature and humidity are displayed on the UI.
+
+
+# Gallery:
+
+[![window]({{site.url}}/images/iot_window/window_1.jpg)]({{site.url}}/images/iot_window/window_1.jpg){: data-lightbox="Turtlebot" data-title="window"}
+[![window]({{site.url}}/images/iot_window/window_2.jpg)]({{site.url}}/images/iot_window/window_2.jpg){: data-lightbox="Turtlebot" data-title="window"}
+[![window]({{site.url}}/images/iot_window/window_3.jpg)]({{site.url}}/images/iot_window/window_3.jpg){: data-lightbox="Turtlebot" data-title="window"}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QKd7CLUgZbE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Authors:
 
