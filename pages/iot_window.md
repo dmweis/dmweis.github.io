@@ -15,10 +15,10 @@ permalink: /window
 
 ## Instructions for building
 
-Connect raspberry pi to wifi
-Start start openhab on pi terminal command: sudo systemctl start openhab2.service
-Start the mqtt server on raspberry pi terminal command: mosquitto
-Connect esp to wifi and raspberry pi, edit SSID passpoword and raspberry pi ip adress in the esp code
+1. Connect raspberry pi to wifi
+1. Start openhab on pi terminal command: `sudo systemctl start openhab2.service`
+1. Start the mqtt server on Raspberry Pi terminal command: `mosquitto`
+1. Connect ESP to WiFi and Raspberry Pi, edit SSID password and Raspberry Pi hostname address in the code
 
 ## Hardware design
 
