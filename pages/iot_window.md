@@ -47,7 +47,9 @@ Wiring diagram:
 
 [![Circuit diagram]({{site.url}}/images/iot_window/circuit_diagram.png)]({{site.url}}/images/iot_window/circuit_diagram.png){: data-lightbox="Turtlebot" data-title="Circuit diagram"}
 
-The prototype window we created was made out of laser cut acrylic and and few 3D printed parts. All modeled in fusion 360
+The prototype window we created was made out of laser cut acrylic and and few 3D printed parts. All modeled in Fusion 360.
+
+You can see the latest version of the model in this interactive inspector:
 
 <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a6b4c92f8b2722c80?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
 
