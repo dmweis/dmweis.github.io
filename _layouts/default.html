@@ -4,6 +4,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.png' | prepend: site.baseurl }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    {% if page.robots_ignore %}
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    {% endif %}
 
 {% seo %}
 

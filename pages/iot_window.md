@@ -1,7 +1,9 @@
 ---
 title: IOT Window
 permalink: /window
+robots_ignore: true
 ---
+
 
 # IOT window
 
