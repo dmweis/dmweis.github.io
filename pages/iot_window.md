@@ -140,9 +140,9 @@ We created an IoT system as specified in our project specification, utilising tw
 
 Some images of the finished prototype
 
-[![window]({{site.url}}/images/iot_window/window_1.jpg)]({{site.url}}/images/iot_window/window_1.jpg){: data-lightbox="Turtlebot" data-title="window"}
-[![window]({{site.url}}/images/iot_window/window_2.jpg)]({{site.url}}/images/iot_window/window_2.jpg){: data-lightbox="Turtlebot" data-title="window"}
-[![window]({{site.url}}/images/iot_window/window_3.jpg)]({{site.url}}/images/iot_window/window_3.jpg){: data-lightbox="Turtlebot" data-title="window"}
+[![window]({{site.url}}/images/iot_window/window_1.jpg)]({{site.url}}/images/iot_window/window_1.jpg){: data-lightbox="Window" data-title="window"}
+[![window]({{site.url}}/images/iot_window/window_2.jpg)]({{site.url}}/images/iot_window/window_2.jpg){: data-lightbox="Window" data-title="window"}
+[![window]({{site.url}}/images/iot_window/window_3.jpg)]({{site.url}}/images/iot_window/window_3.jpg){: data-lightbox="Window" data-title="window"}
 
 Videos of the window in action:
 
