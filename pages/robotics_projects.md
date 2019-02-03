@@ -6,7 +6,7 @@ title: Robotics projects
 
 ## Latest Robotics post
 
-- [{{ site.categories.Robotics.title }}]({{ site.categories.Robotics.first.url }})
+- [{{ site.categories.Robotics.first.title }}]({{ site.categories.Robotics.first.url }})
 
 ## Robotics projects
 
