@@ -32,4 +32,6 @@ audio won't work because PulseAudio is started in user mode
 
 PulseAudio has to be started in system wide mode and user has to be added to the correct groups
 
+https://superuser.com/questions/989385/how-to-make-raspberry-pi-use-an-external-usb-sound-card-as-a-default
+
 [Back to main page!]({{ site.url }})
