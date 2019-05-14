@@ -26,9 +26,7 @@ You can find all of my robotics projects [here]({{ site.baseurl }}{% link pages/
 
 ## Where is David?
 
-I recently started working on a small webapp that could tell you my current location. I decided to do this since I am pretty bad at quickly answering messages from my friends and so that my parents could check if I moved in the past 24 hours since I am also pretty bad at answering their messages and they live pretty far. ```Sorry mom!```
-
-*This project is not yet finished. You can check it's very slow progress on my [GitHub repo](https://github.com/dmweis/where-is-david) my hope was that posting the link here will force me to work on it more*
+This project was put on hiatus. But if you'd like to check where I am anyway you can have some luck [here](http://aprs.fi/?call=2M0WUE)
 
 ## MIX
 
