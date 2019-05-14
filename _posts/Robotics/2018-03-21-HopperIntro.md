@@ -42,3 +42,5 @@ I am very new to ROS and python and C++ as well so I don't think my work is wort
 ### Why Hopper?
 
 I had a hard time picking a name for my robot. I don't think I am good at naming my robots yet. Especially because I like changing my mind a lot. But in this case, I found a name I like it lot. Hopper is named after [United States Navy Rear Admiral Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), One of the people responsible for the first ever compiler and also a person who famously found one of the [first software bugs](https://thenextweb.com/shareables/2013/09/18/the-very-first-computer-bug/). And because of the hopping movement it does when walking.
+
+[Back to main page!]({{ site.url }})
