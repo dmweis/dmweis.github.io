@@ -18,7 +18,7 @@ Or if you are interested in offering me a job or checking out what am I up to th
 
 ## Latest posts
 
-{% for post in site.posts offset:1 limit:5 %}
+{% for post in site.posts limit:5 %}
 - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
