@@ -16,9 +16,11 @@ If you are interested in some of my projects I recommend that you check out my [
 
 Or if you are interested in offering me a job or checking out what am I up to these days you can take a peek at my [LinkedIn](https://www.linkedin.com/in/david-michael-weis/)
 
-## Latest post
+## Latest posts
 
-- [{{ site.posts.first.title }}]({{ site.posts.first.url }})
+{% for post in site.posts offset:1 limit:5 %}
+- [{{ post.title }}]({{ post.url }})
+{% endfor %}
 
 ## Robotics or DIY projects
 
