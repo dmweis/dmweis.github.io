@@ -1,5 +1,5 @@
 ---
-title: "Hopper Design"
+title: "Hopper Components"
 categories: Robotics
 ---
 
