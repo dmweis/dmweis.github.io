@@ -14,7 +14,7 @@ I used to be a software engineer working in Air Traffic control in Denmark, but 
 
 If you are interested in some of my projects I recommend that you check out my [GitHub](https://github.com/dmweis)  
 
-Or if you are interested in offering me a job or checking out what am I up to these days you can take a peek at my [LinkedIn](https://www.linkedin.com/in/david-michael-weis/)
+Or if you are interested in offering me a job or checking out what am I up to these days you can take a peek at my [LinkedIn](https://www.linkedin.com/in/david-weis/)
 
 ## Latest posts
 
