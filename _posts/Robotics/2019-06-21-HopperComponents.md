@@ -5,7 +5,7 @@ categories: Robotics
 
 # Hopper 2.0 Components
 
-For full body go [here]({{ site.baseurl }}{% post_url 2020-06-21-HopperComponents %})!
+For full body go [here]({{ site.baseurl }}{% post_url 2019-06-22-HopperModels %})!
 
 
 ## Main body
