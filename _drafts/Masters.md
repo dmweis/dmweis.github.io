@@ -105,6 +105,55 @@ You can clearly see the adition of cooling fans in the main body design which we
 
 ### Hardware
 
+The hardware of hopper underwent 3 distinct changes to acomodate for this project
+
+#### Better lidar mount
+
+The original mount for the lidar on hopper was made out of componenets originally designed as a generic lidar mount and a cross piece for mounting. This design wasn't ideal as it placed the lidar rather high on top of the body. This affected both the center of mass of the robot and made scanning low obstacles harder.
+
+A new lidar mount was design that directly integrates on the roof plate of hoppper. With no aditional connecting parts the mount is dirrectly mounted with 3 3M screws with the nuts embedded inside of the printed part.
+
+Part can be seen here:
+<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a0523d7005c94b391?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
+
+##### Tibia finger switches
+
+The robot needed a mecahnism for detecting is the toe (tip of the tibia) was making contact with ground. Since I was going for a low cost and simple solution I chose to use simple momentary microswitches. These are easy to get and very easy to integrate. They only provide digital feedback (Touching/not touching) instead of a detailed analogue sensor that would provide continuouse signal showing pressure. But presure sensors on this scale are expensive and difficult to get.
+
+<details>
+    <summary>CAD models and pictures</summary>
+    Original Tibia design:
+    <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a972613eebcb14c45?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
+
+    New tibia design with a place for a switch:
+    <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SH919a0QTf3c32634dcf8cffdd00cbfe5ef9?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
+
+    Image of foot with sensor
+    [![Foot Sensor]({{site.url}}/images/Robotics/HopperMasters/FootSensor.JPG)]({{site.url}}/images/Robotics/HopperMasters/FootSensor.JPG){: data-lightbox="Hopper foot sensor" data-title="Hopper foot sensor"}
+
+    The switches are wired into an Arduino NANO microcontroller on the back of the robot that pushes the data from them into the main computer using a simple serial connection
+
+    [![foot switch controller]({{site.url}}/images/Robotics/HopperMasters/SwitchController.JPG)]({{site.url}}/images/Robotics/HopperMasters/SwitchController.JPG){: data-lightbox="foot switch controller" data-title="foot switch controller"}
+</details>
+
+##### Cooling
+
+One of the problems encountered during the project was that once most of the processing was moved to the on board comptuer it started overheating.
+As most modern computers, the Raspberry pi, will throttle it's CPU when it detects overheating. This caused the gait generation to slow down and hoppers movement would start stuttering.
+
+The solution to this problem was to add active cooling to the robot. Since I didn't want to deal with these issues ever again I decided to add 3 40mm fans that would push air inside of the main body and cooling fins that would allow the air to escape. This way I created positive presure inside of the main body which meant that air would flow inside before escaping through any opening. This will also prevent the gathering of dust in the main body.
+
+The cooling fans are clearly visible in the main CAD model. One on top of each middle leg and one on top of the head.
+
+<details>
+    <summary>Pictures</summary>
+
+    Image of foot with sensor
+    [![Main cooling fan]({{site.url}}/images/Robotics/HopperMasters/CoolingFanHead.JPG)]({{site.url}}/images/Robotics/HopperMasters/CoolingFanHead.JPG){: data-lightbox="Main cooling fan" data-title="Main cooling fan"}
+
+    [![Side cooling fan]({{site.url}}/images/Robotics/HopperMasters/CoolingFanSide.JPG)]({{site.url}}/images/Robotics/HopperMasters/CoolingFanSide.JPG){: data-lightbox="Side cooling fan" data-title="Side cooling fan"}
+</details>
+
 ### Software
 
 ### Results
