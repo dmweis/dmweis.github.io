@@ -87,7 +87,19 @@ and more...
 
 ### methodology and process
 
+Because of the exploratory nature of this project. An my engineering background which has left me with quite a few bad expriences with waterfall methodologies and tight pre planned timelines. I choose to use a different apraoch for project planning for this project (Words more english pls!)
 
+I choose to use a lean methodology for issue tracking. This allowed me to focus on what is always most importatnt and quickly pivot if an apraoch was working out without having to loose time replanning. Since I was alone in my team I didn't need an issues tracker to managed tasks with my teammatesa and ended up using a kanban board more as a Todo list. 
+
+I also didn't integrate my version control systems for either software or hardware with my issue tracker since both the hardware and software design was done in the existing codebase for hopper and it's existing cad model and tracking changes never became an issue. 
+
+I did focus on maintaining gitflow for Hopper for the course of entire project. As a result the git commit history should provide a nice timeline for the course of this project [Commit history to master](https://github.com/dmweis/Hopper_ROS/commits/master) [Branches](https://github.com/dmweis/Hopper_ROS/branches)
+
+The mechanical desgin of hopper was also version controlled (Albeit with lesser attention to detal since I am not less skilled with CAD)
+
+You can clearly see the adition of cooling fans in the main body design which were added as a result of the main computer overaheating during this project 
+
+[![Mech design revision]({{site.url}}/images/Robotics/HopperMasters/HopperRevisionHistory.png)]({{site.url}}/images/Robotics/HopperMasters/HopperRevisionHistory.png){: data-lightbox="Mech design revision" data-title="Mech design revision"}
 
 ## Implementation
 
