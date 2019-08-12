@@ -188,9 +188,44 @@ Implementing [OctoMap](http://wiki.ros.org/octomap_server) was very easy since t
 The library allows us to interact with the octree in differnet ways. One of the simples ways is to check collisions by raycasting. 
 
 My first step was to simple figure out if there is a tall obstacle right in front of hopper. For this purpose I created a service which will perforam raycasts from hoppers position on map directly in front and return all points which collide on a vertical line. 
-This means we effecitvely get distances of object in front of hopper at different heights. Even if this doesn't allos us to extract any information about the surface of the obstacles it lets us know the height of the obstacle and distance towards it. 
+This means we effecitvely get distances of object in front of hopper at different heights. Even if this doesn't allos us to extract any information about the surface of the obstacles it lets us know the height of the obstacle and distance from it. 
+
+#### Motion control interface
+
+Hopper originally didn't provide an external interface for controlling motions of it's limbs. An external node could theoretically try sending position of the feet to the IK controller but it's commands would be overriden by the main boddy controller. That's why it became nessesary to construct a simple to use external API for control of hopper's body.
+
+To allow remote control I implemented a set of services exposed by the main controller node. Specifically there are 8 services.
+
+These are:
+
+1. move_limbs_individual
+  * Control position of all limbs
+1. move_body_core
+  * Control position of center of body
+1. move_legs_until_collision
+  * Same as first one but stops movement if legs encounter an obstacle
+1. read_current_leg_positions
+  * Return position of feet in world coordinates
+1. move_to_relaxed
+  * return body to default relaxed position
+1. move_legs_to_relative_position
+  * control positions of all feet but relative to their previous position
+1. move_legs_to_relative_position_until_hit
+  * Same as previous but only move legs until they hit an obstacle
+1. move_body_relative
+  * Move center of body relative to it's current position
+
+The important distincion of these services is that they let us position limbs in the tf coordinate space. That means the user doesn't have to figure out relative position of an object to hopper and then translate the foot position. The controller node will do it on it's own.
+
+To test this functionality I implemented a high-five feature for hopper. This node will try to detect any close objects in the laser scan data coming from the lidar and tap it's foot on them. As the name sugest the main purpose of this feature is to high-five or fist bump Hopper.
+[Video can be seen here](https://youtu.be/IpTWQ5nY95U)
+
+This feature shows the precision with which hopper can control the positions of it's in relation to detected objects.
+DUring tests hopper could succesfully hit a finger with it's foot.
 
 #### Climbing
+
+SInce hopper was originally designed for walking on mostly flat surfaces it's legs aren't well designed for climbing. It's originally feet didn't provide that much friction and the straight profile of tibia prevented the leg from reaching high places.
 
 [Video of hardcoded climb](https://youtu.be/viiy9UijGl4)
 
