@@ -127,14 +127,14 @@ The robot needed a mecahnism for detecting is the toe (tip of the tibia) was mak
 
     New tibia design with a place for a switch:
     <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SH919a0QTf3c32634dcf8cffdd00cbfe5ef9?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
-
-    Image of foot with sensor
-    [![Foot Sensor]({{site.url}}/images/Robotics/HopperMasters/FootSensor.JPG)]({{site.url}}/images/Robotics/HopperMasters/FootSensor.JPG){: data-lightbox="Hopper foot sensor" data-title="Hopper foot sensor"}
-
-    The switches are wired into an Arduino NANO microcontroller on the back of the robot that pushes the data from them into the main computer using a simple serial connection
-
-    [![foot switch controller]({{site.url}}/images/Robotics/HopperMasters/SwitchController.JPG)]({{site.url}}/images/Robotics/HopperMasters/SwitchController.JPG){: data-lightbox="foot switch controller" data-title="foot switch controller"}
 </details>
+
+Image of foot with sensor
+[![Foot Sensor]({{site.url}}/images/Robotics/HopperMasters/FootSensor.JPG)]({{site.url}}/images/Robotics/HopperMasters/FootSensor.JPG){: data-lightbox="Hopper foot sensor" data-title="Hopper foot sensor"}
+
+The switches are wired into an Arduino NANO microcontroller on the back of the robot that pushes the data from them into the main computer using a simple serial connection
+
+[![foot switch controller]({{site.url}}/images/Robotics/HopperMasters/SwitchController.JPG)]({{site.url}}/images/Robotics/HopperMasters/SwitchController.JPG){: data-lightbox="foot switch controller" data-title="foot switch controller"}
 
 ##### Cooling
 
@@ -145,16 +145,34 @@ The solution to this problem was to add active cooling to the robot. Since I did
 
 The cooling fans are clearly visible in the main CAD model. One on top of each middle leg and one on top of the head.
 
-<details>
-    <summary>Pictures</summary>
+Image of foot with sensor
+[![Main cooling fan]({{site.url}}/images/Robotics/HopperMasters/CoolingFanHead.JPG)]({{site.url}}/images/Robotics/HopperMasters/CoolingFanHead.JPG){: data-lightbox="Main cooling fan" data-title="Main cooling fan"}
 
-    Image of foot with sensor
-    [![Main cooling fan]({{site.url}}/images/Robotics/HopperMasters/CoolingFanHead.JPG)]({{site.url}}/images/Robotics/HopperMasters/CoolingFanHead.JPG){: data-lightbox="Main cooling fan" data-title="Main cooling fan"}
-
-    [![Side cooling fan]({{site.url}}/images/Robotics/HopperMasters/CoolingFanSide.JPG)]({{site.url}}/images/Robotics/HopperMasters/CoolingFanSide.JPG){: data-lightbox="Side cooling fan" data-title="Side cooling fan"}
-</details>
+[![Side cooling fan]({{site.url}}/images/Robotics/HopperMasters/CoolingFanSide.JPG)]({{site.url}}/images/Robotics/HopperMasters/CoolingFanSide.JPG){: data-lightbox="Side cooling fan" data-title="Side cooling fan"}
 
 ### Software
+
+The software stack on hopper had to undergo the main changes.
+
+Original aproach to solving our problem was to performa a 3D scan of the obstacle using the 2D lidar attached to the top of the robot. It's a pretty commong practice to obtain 3D scans of the enviroment by tilting a 2D lidar. So common in fact that ROS includes multiple libraries just for mergeing laser scans into point clouds.
+Hopper even offered a unique oportunity. We didn't have to add a motor or mounting system that would allow for tilting since the hexapod legged platform can alredy move it's body in full 6 Degrees of freedom.
+As previously mentioned hopper alredy had the ability to let external nodes modify it's posture. This was allowed by exposing a topic with 2 vectors as arguemnts. One for translation and one for roll, pitch and yaw in euler angles (After later usage I wish I used a quaternion for rotation instead)
+
+#### Lidar scanning node
+
+This node has two scanning modes.
+First is a continuouse scanning mode in which hopper keeps gradualy tilts in every direction slowly following a circle. This allows the lidar to scan all of it's suroundings. The beam isn't high enough to observe tall obstacles but it allows us to create an image of the 3D space surrounding the robot. You can see a video [here](https://youtu.be/StWPPSDLb4A)
+
+Second mode is a servic allowing for scan on demand. This service has two modes. Front/back and left/right. In front/back mode the robot tilts facting down and slowly turns it's face upwards. This way the lidar slowly scans everything in front and behind the robot. You can see video [here](https://youtu.be/HUGzx2rlzIY). The left to right mode does the same thing but from one side to the other. THis service also takes an angle (This is the vertical field of view of the scan) and a duration (This is how long the scan should last). By making the scan longer the lidar will have time to do more scans and produce higher resolution scans.
+
+This progressive scanning method is using [Laser assembler package](http://wiki.ros.org/laser_assembler) from the ROS repositories. This package collects laser scans (data coming from 2D lidars) and on request assembles them into point clouds. It uses TF transforms to track the movement of the laser base.
+In order to see the relative motion of the lidar we use the center of hoppers footprint as a stable point against which to translate all laser scans. This means that hopper can't move during the scan. If the robot were to move we would loose track of the relative position of the lidar. Odometry doesn't offer sufficient precision and hopper can't be using localization while tilting since localization relies on laser scan data connected in horizontal plane.
+
+The Laser Assembler apraoch later proved to have a significant issue. Since all of the scanned pointclouds were moved to hoppers foot print. The resulting data lookd as if it originated from bellow hopper. This is an issue since OctoMap (mapping library I used to assemble occupancy data about the enviroment) uses the origin point and a place where to cast collision checking from. This means that the octomap wasn't updating correctly after moving around.
+
+#### Processing point cloud data
+
+In order to map the enviroment I had to process the point cloud data into a usable format. 
 
 ### Results
 
