@@ -172,7 +172,28 @@ The Laser Assembler apraoch later proved to have a significant issue. Since all 
 
 #### Processing point cloud data
 
-In order to map the enviroment I had to process the point cloud data into a usable format. 
+In order to map the enviroment I had to process the point cloud data into a usable form.
+
+I devised 3 different aproaches for this:
+
+1. Reconstruct surface mesh out pointcloud
+1. Crate probabilistic 3D map using octrees and octmap
+1. detect with raw point cloud data and detect surface normals and contact points based on point density
+
+Out of all of these OctoMap was the simplest to test. [OctoMap](http://octomap.github.io/) is a probabilistic mapping framework that uses Octrees to map the world. Octrees are a very efficient method for storing data about the world. Another major adventage of octrees over the other two apraoches was that octrees allow us to encode the difference between unknown and empty space. This is important since you need to plan movement differently around empty and unknown areas. This would also allow us to potentially move the robot around and perform another scan from a different angle to map previously unknown area. It would also let us using mapping data from outr robots operating in the same area to enhance our knowledge of the world.
+
+##### OctoMap
+
+Implementing [OctoMap](http://wiki.ros.org/octomap_server) was very easy since there is an already existing ROS node for it. This node simply takes in pointcloud data and creates a map from this. From this server we can pull the new probablistic model of the world as a ROS message and process it using the Octomap library.
+The library allows us to interact with the octree in differnet ways. One of the simples ways is to check collisions by raycasting. 
+
+My first step was to simple figure out if there is a tall obstacle right in front of hopper. For this purpose I created a service which will perforam raycasts from hoppers position on map directly in front and return all points which collide on a vertical line. 
+This means we effecitvely get distances of object in front of hopper at different heights. Even if this doesn't allos us to extract any information about the surface of the obstacles it lets us know the height of the obstacle and distance towards it. 
+
+#### Climbing
+
+[Video of hardcoded climb](https://youtu.be/viiy9UijGl4)
+
 
 ### Results
 
