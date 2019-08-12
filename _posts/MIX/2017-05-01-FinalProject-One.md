@@ -25,7 +25,7 @@ One of our key desires was to make the experience for the GM as much bound in ph
 It would have been obviously much easier to make the GM experience a simple Tablet application where he can drag the monsters around on a touch screen and be done with it. But we don't do simple.
 
 Idealy the GM would be using some sort of an interactive table. Something like [ReacTIVision](http://reactivision.sourceforge.net/) based multi-touch table with the monsters represented by tokens that the player could simply move around the table. And if you do a short search online you'll find out that we are by far not the first ones who thought of doing something like this.
-But sadly we don't have access to a table like that, yet, so we had to do with a custom solution that I'll talk about in [next post]({{ site.baseurl }}{% post_url 2017-05-05-FinalProject-Two %})
+But sadly we don't have access to a table like that, yet, so we had to do with a custom solution that I'll talk about in [next post]({{ site.baseurl }}{% post_url MIX/2017-05-05-FinalProject-Two %})
 
 ### Hero
 

@@ -5,7 +5,7 @@ categories: MIX
 
 # This week's topic: Desktop VR
 
-Finally. Desktop VR. A topic very close to my heart. Maybe not my most favorite to talk about (That would be [tracking]({{ site.baseurl }}{% post_url 2017-03-02-WeekThree-Tracking %})) but definitely one of the most favorite ones taht I also have most expirience with. As I previously mentiond I own an [HTC Vive](https://en.wikipedia.org/wiki/HTC_Vive). And I've spent countless hours with it either playing games or developing small VR expiriences. And I have to say that VR is amazing but is currently sadly limited by the limited amount of expiriences available.
+Finally. Desktop VR. A topic very close to my heart. Maybe not my most favorite to talk about (That would be [tracking]({{ site.baseurl }}{% post_url MIX/2017-03-02-WeekThree-Tracking %})) but definitely one of the most favorite ones taht I also have most expirience with. As I previously mentiond I own an [HTC Vive](https://en.wikipedia.org/wiki/HTC_Vive). And I've spent countless hours with it either playing games or developing small VR expiriences. And I have to say that VR is amazing but is currently sadly limited by the limited amount of expiriences available.
 
 # This week's project
 

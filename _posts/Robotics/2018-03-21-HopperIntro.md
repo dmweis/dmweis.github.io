@@ -5,7 +5,7 @@ categories: Robotics
 
 # Hopper the Hexapod Robot
 
-If you look at my previous posts you can see my [3D printed Quadruped robot]({{ site.baseurl }}{% post_url 2017-10-06-QuadrupedTeaser %})!  
+If you look at my previous posts you can see my [3D printed Quadruped robot]({{ site.baseurl }}{% post_url Robotics/2017-10-06-QuadrupedTeaser %})!  
 I promised I would write a more comprehensive description but never got around to doing it. Most because the project very quickly evolved past that stage and I was too busy working on it to write about it. But here is a short description:
 
 ## Original Quadruped

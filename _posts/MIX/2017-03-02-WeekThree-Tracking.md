@@ -7,7 +7,7 @@ categories: MIX
 
 Let me start by saying that tracking is my most favorite topic in VR/AR. And when I started writing this post the first time, I wrote 700 words of introduction alone. I may try to post it as an alternative version one day, but for now, here is a very compressed version!
 
-We didn't do a full project this week. At least not entirely. Instead our [Mobile VR project]({{ site.baseurl }}{% post_url 2017-03-15-WeekFour-Mobile VR %}) is a bit of a combination of tracking and mobile. But let me start from the beginning.
+We didn't do a full project this week. At least not entirely. Instead our [Mobile VR project]({{ site.baseurl }}{% post_url MIX/2017-03-15-WeekFour-Mobile VR %}) is a bit of a combination of tracking and mobile. But let me start from the beginning.
 As I said tracking is my favorite topic. And my most favorite tracking system is the Lighthouse system used by the HTC Vive.
 It was one of the driving reasons for why I bought a Vive for myself. And I must say that my Vive spends most of its days just laying on my table and plugged in just to work as a receiver for my controllers.
 Wiring a simple program that circumvented the entire VR system and just used to controllers as tracking points was actually one of the first things I did with my Vive. And I have since used it for many things ranging from controlling a robotic arm to copy motion of human hand to room mapping using a combination of a Kinect sensor and a Vive controller.
@@ -53,7 +53,7 @@ This system may seem complicated at first. Especially since it has so many movin
 
 ![Schematic for a simple Lighthouse sensor]({{site.url}}/images/MixWeekThreeTracking/lighthouse_sensor_schematic.jpg)
 
-Since we combined this weeks project with Mobile VR I will talk about what we did in the post about [Mobile VR]({{ site.baseurl }}{% post_url 2017-03-15-WeekFour-Mobile VR %})
+Since we combined this weeks project with Mobile VR I will talk about what we did in the post about [Mobile VR]({{ site.baseurl }}{% post_url MIX/2017-03-15-WeekFour-Mobile VR %})
 
 But before I finish this I want to talk about one interesting problem we had to solve.
 Since our intention was to use an Vive controller without the headset we were facing one simple problem. The receivers for the Controllers are located [inside the headset itself](https://www.ifixit.com/Teardown/HTC+Vive+Teardown/62213#s130831). This is a smart solution because the headset is always very close to the headset and will almost never loose signal. But it was a problem for us. The simple solution is to use a SUB cable and connect the controller straight to the computer. This will cause the controller to switch to wired mode and it will work. But I didn't like the wired solution.

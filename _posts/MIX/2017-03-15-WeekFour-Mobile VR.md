@@ -3,7 +3,7 @@ title: "Week Four: Mobile VR"
 categories: MIX
 ---
 
-_Topic in this post is related to topic from week three for so you should read the [previous blog about tracking]({{ site.baseurl }}{% post_url 2017-03-02-WeekThree-Tracking %}) first._
+_Topic in this post is related to topic from week three for so you should read the [previous blog about tracking]({{ site.baseurl }}{% post_url MIX/2017-03-02-WeekThree-Tracking %}) first._
 
 # This week's topic: Mobile VR
 
