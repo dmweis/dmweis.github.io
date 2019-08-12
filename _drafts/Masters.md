@@ -51,6 +51,47 @@ Hopper also has other set of features not used in this project
   * Speaker was originally used to do text to speech using Google's tts API (It would play messages about sensor status, battery low level warnings,...)
   * This was later changed to playing simple sounds in the style of R2D2 (People don't respond well to non humanoid robots talking to them in a familiar voice...)
 
+###### Hopper leg design
+
+Since the design of Hopper's legs is very iportant for this project I am dedicating an entire section to it.
+
+Hopper is a hexapod. That means it has six legs. All of the legs are the same (And are effectively interchangable). Each leg is serially linked and has 3 degrees of freedom. Leg components are named the same way they would be on an insect. Coxa, Femur and Tibia.
+
+####### Coxa
+
+Closest to the body. Moves in horizontal direction. 
+
+<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7ac2a2ccc3016fb7e0?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
+
+THe coxa compoenets consists of 5 3d printed parts. 4 identical plates that mount to the motors and 1 centeral piece that holds them together. The reason it was designed this way was for ease of printing. Iw on't go into details about how to design parts for 3D printing in thei paper but by designing parts to be printed flat against the best you get the most precise and strongest parts. Even if you add number of joints.
+
+####### Femur 
+
+Femur is located between the Coxa and the Tiba. It's closest respective part on a human body would be the thigh.
+
+<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a1381d6e252997f18?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
+
+Hopper's Femur consits of 5 3D printed parts. Same as for Coxa we sacrafice ease of assembly for manufacturing precision and strength.
+The part is designed to lock around the Dynamixel AX-12 motor. The mount point for tibia is specifically moved back to allow for easy folding of the leg.
+
+####### Tibia
+
+The tibia is the largest part but also consistes of the simplest parts. It's the part that is making contact with the ground
+
+<iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SH919a0QTf3c32634dcf8cffdd00cbfe5ef9?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
+
+The end compoenent of Tibia contains the touch sensor assembly. In the originall design this was a simple rubber foot with no sensing. In a previous iteration the Tibia was angled so that it would have a better angle of attack towards the ground. But current version is straight to allow the leg to fold into the body
+
+####### Folding
+
+[![Original Hopper]({{site.url}}/images/Robotics/HopperMasters/OriginalHopper.jpg)]({{site.url}}/images/Robotics/HopperMasters/OriginalHopper.jpg){: data-lightbox="Original Hopper" data-title="Original Hopper"}
+
+As you can see in the image the original hopper has a very different leg design. This design was using components from Dynamixel for the coxa part. The new hopper was redesigned to allow the robot to fold up on command. This way the robot was much easier to transport
+
+[Video of Hopper unfolding](https://youtu.be/5bmnhgGrznc)
+
+
+
 ##### Software stack
 
 Hopper also has a previously existing software stack implemented using [ROS](https://www.ros.org/). This stack includes:
@@ -262,10 +303,48 @@ Keeping in spirit with trying to adopt the walking algorithm the smallest amount
 The orignal gait generator on hopper is using a staticly defined tripod gait. Tripod gait works by always lifting 3 legs. Front and rear on one side and middle on the other side. This way the robot always maintain's tripod stability. That means 3 feet are always on the ground and center of mass of the robot is inside of the triangle created by the contact points with ground. This makes this gait "Statically stable". As a result you can stop the movemnt in any stage and the robot will stay stable. 
 This is contrary to dynamically stable gaits which are relying on effectively falling into a step. Dynamically stable gaits are usually used by bipedal or quadrupedal robots.
 
-### Results
+The gair generation procedure for hopper can be described in few steps.
 
+1. select feet combination for moving
+1. calculate desired position by estimating traveled distance based on desired speed
+1. add distance vector to position of the feet in relaxed pose (Add vector to lifted feet and subtract from grounded feet)
+1. start shifting feet while lifting the selected feet. The feet are lifted by a sinsus function calculated frm the distance traveled. This way the feet are on the ground at the start and end and reach the heighest point of trajectory in the middle of travel. Grounded feet are moved with no adjustment to heigh
+
+This algorithm has few issues. Such as the fact that lifted feet will touch ground while moving against the direction of the movemnt of the robot. This couses them to slow the gait down. This could be fixed by moving the feet a bit more forward and lowering them while pulling back. But this is complicated and would require the feet to overshoot on every move.
+
+In order to adapt this algorithm for collision checking I replaced the sine function with a square function. So feet lift to the max height position imediatly. SHift forward while lifted and then slowly lower while checking for any collisions. This means that feet are never moving forward unless fully lifted. This way the foot won't crush into an obstacle without sensing it. That would be an issue since the legs do not have sensors from the front and wouldn't detect any other collisions. 
+
+The process of lowering the feet is also significantly slower. This is to prevent overshooting. The feet are basically lowered by few milimiteres at a time and after each step the touch sensor is checked. 
+
+At the start I was worried that since the switches are digital. They may triger while the foot is still not fully lowered and the robot would sag. But this never became an issue.
 
 ### Testing
+
+In order to test HOpper's climbing ability I constructed few different obstacles out of boxes. I decided to keep it simple and use mostly flat and wide obstacles. Basically shorter stairs.
+
+
+### Results
+
+[Here is a full video of hopper performing a scan and climbing over an obstacle with multiple layers](https://youtu.be/faWG_BYd5a0)
+
+Even if the scan is performed the data from it is only printed on screen of my laptop and I manually adjust the height of the body and leg lift height on a remote controller. Speed and direction is also manually controlled in this video. But there is not reason the same princple wouldn't work for autonomouse navigation. 
+
+You can clearly see the gait behavior in this video.
+
+1. 3 legs are lifted quickly
+1. Lifted legs are slowly moved towards a target while the grounded leg are pushing the robot forward.
+1. Legs are slowly lowered until they encounter an obstacle at which point they stop lowering
+
+THe robot is very stable and platform stays level. This is without any compensation from the IMU. It would be very easy to make hopper level after each step. Butit was never nessasry in my testing.
+
+`The little wobble and up and down motion is because the first obstacle was broken. It was a folded black transport box and the bottom of it was cracked and flexing under hopper`
+
+[This video shows hopper climbing a single taller obstacle](https://youtu.be/zKntn13qdg4)
+
+In this case there was no scan. I simply set hopper to lift it's feet 11 cm heigh. The obstacle is 9 centimeters tall. From my experiments this seems to be the heighest ibstacle that hopper can overcome. The limit seems to be the height to which hopper can lift it's legs. As you can see in the video the legs are getting as close to the body as they can. This could be compensated by moving the feet a bit furthure away from the body but this would cause them to slip if lowered to the ground. As previously mentioned, the Tibia has to be as close to perpendicular to the ground as possible to prevent slipping.
+
+### Conclusion
+
 
 
 ### Problems
