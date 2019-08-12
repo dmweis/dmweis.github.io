@@ -223,12 +223,44 @@ To test this functionality I implemented a high-five feature for hopper. This no
 This feature shows the precision with which hopper can control the positions of it's in relation to detected objects.
 DUring tests hopper could succesfully hit a finger with it's foot.
 
+##### Problems
+
+When trying to reconstruct the shape of the obstacle, it very quickly became aparently that the laser scan for any flat surface isn't dense enough. This was mostly caused by the attack under which the lidar was hitting the obstacle. If obstacle was close to height of the lidar the precision would drop significantly because even a smaller angular differece would cause significant difference in results.
+
+This meant that trying to get surface normals from neighbouring points would be imprecise.
+
+If I had more time I would try to use octomaps ability to map unknown space and force the robot to reposition and erescan unknown areas. This could be conviniently done using the ray cast system built into octomap that can be used to detect from which point could you see the unknown space. In order to implement this I would have to resolve the issue with octomap collision checking being done from the wrong origin point.
+
+But even with this problem, scans had enought detail on vertical walls to precisly estimate obstacle heights and shapes. The only problem was the accuracy. Even if the obstacle was reconsutructed with good detail the entire object would be shifted from real world. After an investigation it seemed that this was a combination of lidar accuracy issue, IMU precision and motor sagging.
+
+Accuracy issues:
+* Lidar
+  * even if the lidar measurements exhibited a high amount of precision (difference between precisions) it exhibited an accuracy issue of about 1 cm (This is in acordance with it's specs sheet)
+  * This could be caused by many internal issues with the lidar and there isn't much I could do about it
+  * Ignoring this minor issue the lidar performed admirable. There was very little noise coming from the sensor and it didn't exhibit any noticable veiling glare whcih is pa pretty commong issue with Lidars
+
+* Motor saging
+  * The position of the lidar relative to the world is calculated based on position of the legs. WHen commanding the legs the robot assumes that the 3 lowest feet ar the ones making contact with the ground and calculates the current body height from there. This is only done from the desired position before it's given to the Inverse kinematic engine. This means that the real world position of the motoros will be a bit different. This is a combination of gear backlash (The servos are using plastic gears), motor controllers holding them a bit under the desired position because of the effort to counter gravity, and because of the flex from the 3d printed parts in the legs. 
+  * Parts of this could be compensated by reading the motor positions and using forward kinematics to see their position. But robot would still have a minor position mistake caused by parts flexing. Using very simple measurements with a rules it seems that the robot will sag by up to 3 cm. Depending on how it stepped to the point where it's standing and how slippery the surface is.
+  If the tibias aren't almost perpendicular to the ground they have a tendency to slip a bit. 
+
+* IMU
+  * Meh. It's good.
+
+After investigating these issues I decided that I will use the precise vertical data to estimate obstacle height. And make sure that I am correctly aligned by detecting collisions with the touch sensors on the feet. This way even if the obstacle is a bit closer or futhure away than expected hopper will simply climb over it. And if it's a bit height I will simple lift the feet heighr and lower them until I hit the obstacle from the top.
+
 #### Climbing
 
-SInce hopper was originally designed for walking on mostly flat surfaces it's legs aren't well designed for climbing. It's originally feet didn't provide that much friction and the straight profile of tibia prevented the leg from reaching high places.
+Since hopper was originally designed for walking on mostly flat surfaces it's legs aren't well designed for climbing. It's originally feet didn't provide that much friction and the straight profile of tibia prevented the leg from reaching high places.
 
 [Video of hardcoded climb](https://youtu.be/viiy9UijGl4)
 
+Keeping in spirit with trying to adopt the walking algorithm the smallest amount possible. And knowing that the obstacle detection had significant accuracy issues. I decided to start modifying the gait gneration algorithm to allow for collision detection on feet.
+
+##### Hoppers original gait generator
+
+The orignal gait generator on hopper is using a staticly defined tripod gait. Tripod gait works by always lifting 3 legs. Front and rear on one side and middle on the other side. This way the robot always maintain's tripod stability. That means 3 feet are always on the ground and center of mass of the robot is inside of the triangle created by the contact points with ground. This makes this gait "Statically stable". As a result you can stop the movemnt in any stage and the robot will stay stable. 
+This is contrary to dynamically stable gaits which are relying on effectively falling into a step. Dynamically stable gaits are usually used by bipedal or quadrupedal robots.
 
 ### Results
 
