@@ -1,5 +1,9 @@
 # Making legged robots climb things
 
+## Abstract
+
+Robots suck so I make them better. Duh!
+
 ## Intro
 
 ### Problem formulation
@@ -59,7 +63,7 @@ Hopper is a hexapod. That means it has six legs. All of the legs are the same (A
 
 ####### Coxa
 
-Closest to the body. Moves in horizontal direction. 
+Closest to the body. Moves in horizontal direction.  
 
 <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7ac2a2ccc3016fb7e0?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
 
@@ -91,7 +95,6 @@ As you can see in the image the original hopper has a very different leg design.
 [Video of Hopper unfolding](https://youtu.be/5bmnhgGrznc)
 
 
-
 ##### Software stack
 
 Hopper also has a previously existing software stack implemented using [ROS](https://www.ros.org/). This stack includes:
@@ -117,7 +120,7 @@ Hopper also has a previously existing software stack implemented using [ROS](htt
   * Hopper can use the move base stack from ROS in combination with a SLAM algorithm of choice (Currently supported Gmapping and Hectormapping) for navigation and exploratory behavior
 
 
-There are other features that aren't documented here but worht mentioning:
+There are other features that aren't documented here but worth mentioning:
 
 * Web telmetry interface using NASA's openmct platform
 * system telemetry for hardware and performance metrics (Important for debugging overheating issues during this project)
@@ -157,7 +160,7 @@ A new lidar mount was design that directly integrates on the roof plate of hoppp
 Part can be seen here:
 <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a0523d7005c94b391?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
 
-##### Tibia finger switches
+##### Tibia toe switches
 
 The robot needed a mecahnism for detecting is the toe (tip of the tibia) was making contact with ground. Since I was going for a low cost and simple solution I chose to use simple momentary microswitches. These are easy to get and very easy to integrate. They only provide digital feedback (Touching/not touching) instead of a detailed analogue sensor that would provide continuouse signal showing pressure. But presure sensors on this scale are expensive and difficult to get.
 
@@ -320,7 +323,7 @@ At the start I was worried that since the switches are digital. They may triger 
 
 ### Testing
 
-In order to test HOpper's climbing ability I constructed few different obstacles out of boxes. I decided to keep it simple and use mostly flat and wide obstacles. Basically shorter stairs.
+In order to test Hopper's climbing ability I constructed few different obstacles out of boxes. I decided to keep it simple and use mostly flat and wide obstacles. Basically shorter stairs.
 
 
 ### Results
