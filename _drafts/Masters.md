@@ -12,7 +12,7 @@ The point of this project was to develop a novel solution to obstacle traversal 
 
 ### Choice of platform
 
-CHoice of platform was an importatnt step of this project. THe original intention was to use the Anymal robot by ETH Zurich. This prooved to be inconvinient and quite limiting which forced the project to use a different paltform.
+CHoice of platform was an important step of this project. THe original intention was to use the Anymal robot by ETH Zurich. This proved to be inconvinient and quite limiting which forced the project to use a different platform.
 
 Instead this project use a self developed hexapod robot called Hopper.
 
