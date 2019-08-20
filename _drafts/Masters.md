@@ -1,18 +1,97 @@
-# Making legged robots climb things
+# Legged locomotion for hexapod robots
 
 ## Abstract
 
-Robots suck so I make them better. Duh!
+## Background
+
+### Context
+
+Many currently used low cost robotics platform use wheels or tracks to move around. Both of these solutions are ideal on relatively flat surfaces when it comes to speed and energy efficiency. But both tracked and, even more so, wheel robots have issues traversing rougher terrains. Depending on the size of the robot, many may not even be able to go over relatively common obstacles, such as stairs or curb on a sidewalk. This makes them unsuitable for rougher terrains such as build sites or forested areas.
+There is a lot of research going into building larger legged robots that can traverse these areas (P. Fankhauser, 2016) The issue with using legged robots with 4 legs is that their price is generally much higher and their reliably is much lower. They are significantly less energy efficient. Most of these designs have to expand energy just to stay upright.
+This project is looking into exploring possibilities for a low-cost legged robot with 6 legs that could traverse these areas.  
+Such robot could be used for inspections on build sites, offshore platforms, overgrown areas, factories or forested area with wild growth or buildings that aren't wheelchair accessible. Thanks to it’s low manufacturing cost and open source design, such robot can be used for research anywhere in the world.  
+A significant problem of legged robots is that they require higher awareness of the surrounding world in order to move around. In order to find contact points with the ground a legged robot must be able to scan the ground. This is usually achieved with 3D lidars, depth sensors or stereoscopic cameras. 
+Issues with these sensors is that they have a very high price and, especially in the case of stereoscopic cameras, require large amount of processing power. They are generally also large and cumbersome.
+This project is specifically focusing on investigating using low cost and accessible alternatives in combination with versatility of the robotic platform in use to achieve similar capability at a much lower price.
+
+### Novelty
+
+With the recent advances in sensors technology, actuators and processing power legged robots are nowadays more common than every before. But even with how common they are achieving reliable dynamic stability in real world conditions is still difficult. This project doesn’t aim to solve this issue.
+
+Platform used in this project is legged but using 6 legs. This means that the robot always has enough contact points with the ground to achieve static stability and effectively eliminates the need for dynamic control. This significantly simplifies the gait generation and control of the legs. As a side effect the robot is also more stable and can carry a much larger and heavier sensors. This allows us to use a Lidar sensor which would otherwise be too heavy for a 4-legged robot this size.  
+Even if the individual components of this research have been done before in different settings, this specific combination of problems and approach wasn’t researched much. Especially with a tight set of constrains in the form of budget and size limitations which force the project to use rather primitive solutions to some issues.
+
+<!-- Figure out how to reword this -->
+There were many previous projects with similar aim (Timon Homberger, 2016). The novelty of this specific project comes from the platform used. 
+
+
+The robot used in this research is completely designed, manufactured, and assembled by the student. The entire design is open source and fully accessible and very easy to modify for specific purposes. Another difference from most other similar projects is the limited set of sensors. Main sensor used for mapping is a 2D lidar. Most other projects use combination of stereoscope cameras, depth cameras or even external tracking systems. If this project fails at achieving obstacle traversal using the limited set of sensors we may bypass this issue by augmenting the data using an external tracking sensor, but unless this proves necessary the main goal of the project is to have the robot be completely self-contained.
+
+### The aims of the project
+
+Currently the Hopper hexapod platform is equipped with a 2D lidar with a relatively low precision of 2000 points per second and scanning frequency of 5hz. This sensor on it’s own isn’t enough to scan a 3D obstacle since it can only detect objects in one plane. This project plans on using the robots ability to tilt and move with combination with an Inertial measurement unit to perform a 3D scan. This would be somewhat analogue to using a rotating 2D lidar, as is done on robots such as the Boston Dynamics Atlas or Willow garage PR2. Once a full scan of an obstacle is acquired the robot will attempt to climb over the obstacle using the reconstructed image.
+
+## Anticipated risks
+
+<!-- This is 4? -->
+We can separate the problem into 3 parts. Scanning the obstacle, mapping the obstacle and planning a path to climb over it, making the robot climb over the obstacle
+
+### Scanning
+
+In the first part we can discover that the limited resolution of the 2D lidar or it’s limited precision simply isn’t enough to scan the obstacle with enough detail.
+In case we encounter this issue, we can use either an onboard RGBD camera or an external sensor to map the obstacle. If all else fails we can always fall back to providing the robot with a model of the obstacle effectively removing the step from the process in favor of accomplishing at least the later points.
+
+### Mapping and motion planning
+
+The limited computing power on board of the robot may not be enough to map and plan a motion crossing over the obstacle. In case we encounter this issue we have multiple alternatives.
+We can install a more powerful computer on board of the robot at the cost of more power consumption
+We can use an external computer with more computing power to perform the calculations and communicate wirelessly. This will make the process slower and slightly devaluate the advantage of using a lwo cost platform but isn’t such a problematic solution. Using cloud services for this task is also an option.
+Climbing
+The robot simply physically can’t climb over obstacles. This will definitely be a problem for some obstacles of larger size. The solution is that we either use simpler obstacles or redesign the body of the robot to be more suited for climbing. This is one of the advantages of using a robot designed by the research since we can alster the design as much as we want.  
+
+<!-- TODO: (This chapter is a joke) -->
+## Literature review
+
+Context
+For the purpose of literature review we can separate this project into two distinct parts. First is scanning and mapping of any potential obstacles. Second is climbing over the obstacle.
+Scanning and mapping
+Since we are limited in the types of sensors, we are trying to achieve this with we have to be creative. I most projects this issue is solved using some of the following techniques:
+1.	3D lidar
+a.	Anymal from ETH Zurich is an example of a robot using this. Bostnom Dynamics Atlas also uses a spinning Lidar
+2.	Depth camera
+a.	Both Spot Mini by Boston dynamics and Anymal by ETH Zurich can optionally use different types of depth sensing cameras
+3.	Stereoscopic camera system
+a.	A robot using a stereo vision system was used in a research by ETH Zurich (Timon Homberger, 2016)
+4.	Single camera
+
+We aren’t planning on using any of the solutions for the following reasons:
+
+1.	3D lidar
+a.	Most lidars of this kind are out of the price range of the project. They also consume too much power, are too large and require enough computation performance
+2.	Depth camera
+a.	Depth cameras are an option for us. Especially if we consider recent advances which allowed for very small depth cameras with integrated computational abilities. An example of this would be the Intel RealSense camera. The issue with this solution is that cameras of this kind aren’t most reliable in outdoor conditions and the price. Keeping a low price point for our solution is an important factor
+3.	Stereo camera
+a.	Stereo cameras are a viable solution from the perspective of the physical sensor. We already have a camera onboard of the robot and it wouldn’t take much effort to add another one. The issue with stereoscopic cameras is computational power needed to extract depth information from a pair of video streams. Another issue is that many obstacles we may encounter will not have interesting features that stereoscopic cameras can use to generate a disparity image. This option can also be later explored in combination with a remote computation platform
+4.	Single camera
+a.	There are multiple ways single camera can be used for depth estimation. Including structured light or a classifier trained to recognize objects and estimate their distance based on pretrained dataset. This solution is complicated and would with in of itself pose a bigger challenge than the rest of the project. It would still be potentially interesting to research using a combination of other sensors with the camera that’s already on board of the robot
+Our approach instead focuses on using a 2D lidar and tilting the robot body until a full 3D point cloud of the room can be assembled. Using assembled point clouds to map 3D environments is a fairly common practice in robotics and there are already existing solutions to this problem. Our project will attempted to use the OctoMap project (A. Hornung, 2013) for this purpose. OctoMap is a very fitting solution for us since it focuses on performance and low complexity and can work with multiple different sensors with very different precision.
+
+Motion planning
+Lorem ipsum
+Climbing
+Simplest type of obstacle we plan on climbing over are upwards heading stairs. The advantage of stairs as an obstacle is that they are relatively easy to map from the bottom using our 2D lidar setup and that they offer flat surfaces. If our obstacles will offer flat surfaces, we can easily just plan all motions in kinematic space and safely climb without too much fear about feet slipping. In case we extend our project into climbing over more complicated obstacles without flat contact surfaces we would have to take feet slippage into consideration and calculate the dynamics of our robot. This will significantly complicate both 
+
 
 ## Intro
 
+
 ### Problem formulation
 
-The point of this project was to develop a novel solution to obstacle traversal for legged robots. This project was furthure specifalized by using a self implemented platform and a set of low cost sensors.
+The point of this project was to develop a novel solution to obstacle traversal for legged robots. This project was further specialized by using a self implemented platform and a set of low cost sensors.
 
 ### Choice of platform
 
-CHoice of platform was an important step of this project. THe original intention was to use the Anymal robot by ETH Zurich. This proved to be inconvinient and quite limiting which forced the project to use a different platform.
+Choice of platform was an important step of this project. The original intention was to use the Anymal robot by ETH Zurich. This proved to be inconvenient and quite limiting which forced the project to use a different platform.
 
 Instead this project use a self developed hexapod robot called Hopper.
 
@@ -22,25 +101,25 @@ Instead this project use a self developed hexapod robot called Hopper.
 
 <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a5bb708b659591a23?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
 
-Hopper was originally designed as a private project. It's a hexapod robotic platform inspired by [TrossenRobotics](http://www.trossenrobotics.com/) [PahntomX AX Quadruped Mark II](http://www.trossenrobotics.com/p/PhantomX-AX-12-Quadruped.aspx) Its's main distonguishing feature are the motors. Robot uses 18 [Dynamixel AX-12A](http://www.robotis.us/ax-12a/). This are serially linked smart servos that allow for individual control over a message bus.  
+Hopper was originally designed as a personal project. It's a hexapod robotic platform inspired by [TrossenRobotics](http://www.trossenrobotics.com/) [PahntomX AX Quadruped Mark II](http://www.trossenrobotics.com/p/PhantomX-AX-12-Quadruped.aspx) It's main distinguishing feature are the motors. Robot uses 18 [Dynamixel AX-12A](http://www.robotis.us/ax-12a/). These are serially linked smart actuators that allow for individual control over a message bus.  
 
-The robot is fully manufactured using rapid prototyping methods. Main body is mostly 3D printed with the 3 main horizontal panels made out of laser cut acrylic (THese could also be 3D printed except it would take a long time). This allowed me to quickly upgrade the design as needed and made it very easy to experiment with hardware changes such as longer legs.  
+The robot is fully manufactured using rapid prototyping methods. Main body is 3D printed with the 3 main horizontal panels made out of laser cut acrylic (These could also be 3D printed except it would take a long time). This allowed me to quickly upgrade the design as needed and made it very easy to experiment with hardware changes such as longer legs.  
 
-Hopper is also equiped with a set of sensors and other features. Main computer is a Raspberry Pi 3 running Ubuntu.
+Hopper is also equipped with a set of sensors and other features. Main computer is a Raspberry Pi 3 running Ubuntu.
 Hopper also has:
 
 * Camera
   * located in the center of the face. It's used for face tracking and was considered for SLAM and mapping
 * Lidar
-  * Mounted at the top of the robot is a 2D lidar. It's a cheaper unit producted by SlamTech [Rplidar A1m8](http://www.slamtec.com/en/lidar/a1)
+  * Mounted at the top of the robot is a 2D lidar. It's a cheaper unit produced by SlamTech [Rplidar A1m8](http://www.slamtec.com/en/lidar/a1)
   * It boasts range of more than 10 meters (heavily dependent on surfaces)
   * scanning speed of 8000 points and default rotation speed of 5 hz (This can be adjusted to change the latency of scans while sacrificing scan detail)
 * IMU
-  * 9 DOF (3 dof Accelerometer, 3 dof Gyroscope, 3 dof magomometer) [BNO055](https://www.bosch-sensortec.com/bst/products/all_products/bno055)
+  * 9 DOF (3 dof Accelerometer, 3 dof Gyroscope, 3 dof magnetometer) [BNO055](https://www.bosch-sensortec.com/bst/products/all_products/bno055)
   * This imu has a built in microcontroller that runs a fusion algorithm on board
-  * Also includes a low precison temperature sensor that isn't used
+  * Also includes a low precision temperature sensor that isn't used
 * Load sensors
-  * Each motor can measure torque load. This measurement wasn't used becuase of how imprecise it is and because of how much it slows down the response speed of the motors
+  * Each motor can measure torque load. This measurement wasn't used as a result of how imprecise it is and because of how much it slows down the response speed of the motors
 * Contact switches in feet
   * Added as part of the project
   * [![Foot Sensor]({{site.url}}/images/Robotics/HopperMasters/FootSensor.JPG)]({{site.url}}/images/Robotics/HopperMasters/FootSensor.JPG){: data-lightbox="Hopper foot sensor" data-title="Hopper foot sensor"}
@@ -48,18 +127,18 @@ Hopper also has:
 Hopper also has other set of features not used in this project
 
 * Face
-  * Face equiped with two sets of Individually addressable RGB LEDs
+  * Face equipped with two sets of Individually addressable RGB LEDs
   * These are used for visualizing different modes and as a primitive HRI element
 * Speaker
-  * Hopper is equiped with a USB speaker that can be used to play sounds
+  * Hopper is equipped with a USB speaker that can be used to play sounds
   * Speaker was originally used to do text to speech using Google's tts API (It would play messages about sensor status, battery low level warnings,...)
   * This was later changed to playing simple sounds in the style of R2D2 (People don't respond well to non humanoid robots talking to them in a familiar voice...)
 
 ###### Hopper leg design
 
-Since the design of Hopper's legs is very iportant for this project I am dedicating an entire section to it.
+Since the design of Hopper's legs is very important for this project I am dedicating an entire section to it.
 
-Hopper is a hexapod. That means it has six legs. All of the legs are the same (And are effectively interchangable). Each leg is serially linked and has 3 degrees of freedom. Leg components are named the same way they would be on an insect. Coxa, Femur and Tibia.
+Hopper is a hexapod. That means it has six legs. All of the legs are the same (And are effectively interchangeable). Each leg is serially linked and has 3 degrees of freedom. Leg components are named the same way they would be on an insect. Coxa, Femur and Tibia.
 
 ####### Coxa
 
@@ -75,7 +154,7 @@ Femur is located between the Coxa and the Tiba. It's closest respective part on 
 
 <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a1381d6e252997f18?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
 
-Hopper's Femur consits of 5 3D printed parts. Same as for Coxa we sacrafice ease of assembly for manufacturing precision and strength.
+Hopper's Femur consists of 5 3D printed parts. Same as for Coxa we sacrifice ease of assembly for manufacturing precision and strength.
 The part is designed to lock around the Dynamixel AX-12 motor. The mount point for tibia is specifically moved back to allow for easy folding of the leg.
 
 ####### Tibia
@@ -84,13 +163,13 @@ The tibia is the largest part but also consistes of the simplest parts. It's the
 
 <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SH919a0QTf3c32634dcf8cffdd00cbfe5ef9?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
 
-The end compoenent of Tibia contains the touch sensor assembly. In the originall design this was a simple rubber foot with no sensing. In a previous iteration the Tibia was angled so that it would have a better angle of attack towards the ground. But current version is straight to allow the leg to fold into the body
+The end component of Tibia contains the touch sensor assembly. In the originally design this was a simple rubber foot with no sensing. In a previous iteration the Tibia was angled so that it would have a better angle of attack towards the ground. But current version is straight to allow the leg to fold into the body
 
 ####### Folding
 
 [![Original Hopper]({{site.url}}/images/Robotics/HopperMasters/OriginalHopper.jpg)]({{site.url}}/images/Robotics/HopperMasters/OriginalHopper.jpg){: data-lightbox="Original Hopper" data-title="Original Hopper"}
 
-As you can see in the image the original hopper has a very different leg design. This design was using components from Dynamixel for the coxa part. The new hopper was redesigned to allow the robot to fold up on command. This way the robot was much easier to transport
+As you can see in the image the original Hopper has a very different leg design. This design was using components from Dynamixel for the coxa part. The new Hopper was redesigned to allow the robot to fold up on command. This way the robot was much easier to transport
 
 [Video of Hopper unfolding](https://youtu.be/5bmnhgGrznc)
 
@@ -101,14 +180,14 @@ Hopper also has a previously existing software stack implemented using [ROS](htt
 
 * Velocity control of the main body with a simple static gait generator (No sensing other than current feet position)
 * Body pose control
-  * User can define position and orientation offset from relaxed positon and robot will maintain it
+  * User can define position and orientation offset from relaxed position and robot will maintain it
 * Body pose sequencer
   * Hopper has a predefined set of motions that can be executed at will (This doesn't allow external code to define motions)
 * Face tracking system
   * Hopper can use the camera in it's face to track faces and look at them
   * Face tracking is done on board of the robot to get a fast enough control loop
-    * Face detection is using Haar Cascades and after initiall acuisition robot uses feature tracking to follow face around (Only way to keep a high enough tracking speed on a low powered platform)
-* Text to speech and audio playbock
+    * Face detection is using Haar Cascades and after initial acquisition robot uses feature tracking to follow face around (Only way to keep a high enough tracking speed on a low powered platform)
+* Text to speech and audio playback
   * Hopper can both play audio files and translate text to speed
   * Text to speech is done using Google's Text to speech api and requires internet connection (MEssages can be cached for later use without access to the internet)
 * Facial expression detection
@@ -122,7 +201,7 @@ Hopper also has a previously existing software stack implemented using [ROS](htt
 
 There are other features that aren't documented here but worth mentioning:
 
-* Web telmetry interface using NASA's openmct platform
+* Web telemetry interface using NASA's openmct platform
 * system telemetry for hardware and performance metrics (Important for debugging overheating issues during this project)
 * Leap motion sensor integration for relative movement of body center of mass
 
@@ -131,17 +210,17 @@ and more...
 
 ### methodology and process
 
-Because of the exploratory nature of this project. An my engineering background which has left me with quite a few bad expriences with waterfall methodologies and tight pre planned timelines. I choose to use a different apraoch for project planning for this project (Words more english pls!)
+Because of the exploratory nature of this project. An my engineering background which has left me with quite a few bad experiences with waterfall methodologies and tight pre planned timelines. I choose to use a different approach for project planning for this project (Words more english pls!)
 
-I choose to use a lean methodology for issue tracking. This allowed me to focus on what is always most importatnt and quickly pivot if an apraoch was working out without having to loose time replanning. Since I was alone in my team I didn't need an issues tracker to managed tasks with my teammatesa and ended up using a kanban board more as a Todo list. 
+I choose to use a lean methodology for issue tracking. This allowed me to focus on what is always most important and quickly pivot if an approach was working out without having to loose time replanning. Since I was alone in my team I didn't need an issues tracker to managed tasks with my teammates and ended up using a Kanban board more as a Todo list. 
 
-I also didn't integrate my version control systems for either software or hardware with my issue tracker since both the hardware and software design was done in the existing codebase for hopper and it's existing cad model and tracking changes never became an issue. 
+I also didn't integrate my version control systems for either software or hardware with my issue tracker since both the hardware and software design was done in the existing codebase for Hopper and it's existing cad model and tracking changes never became an issue. 
 
 I did focus on maintaining gitflow for Hopper for the course of entire project. As a result the git commit history should provide a nice timeline for the course of this project [Commit history to master](https://github.com/dmweis/Hopper_ROS/commits/master) [Branches](https://github.com/dmweis/Hopper_ROS/branches)
 
-The mechanical desgin of hopper was also version controlled (Albeit with lesser attention to detal since I am not less skilled with CAD)
+The mechanical design of Hopper was also version controlled (Albeit with lesser attention to detail since I am not less skilled with CAD)
 
-You can clearly see the adition of cooling fans in the main body design which were added as a result of the main computer overaheating during this project 
+You can clearly see the addition of cooling fans in the main body design which were added as a result of the main computer overheating during this project  
 
 [![Mech design revision]({{site.url}}/images/Robotics/HopperMasters/HopperRevisionHistory.png)]({{site.url}}/images/Robotics/HopperMasters/HopperRevisionHistory.png){: data-lightbox="Mech design revision" data-title="Mech design revision"}
 
@@ -149,13 +228,13 @@ You can clearly see the adition of cooling fans in the main body design which we
 
 ### Hardware
 
-The hardware of hopper underwent 3 distinct changes to acomodate for this project
+The hardware of Hopper underwent 3 distinct changes to accommodate for this project
 
 #### Better lidar mount
 
-The original mount for the lidar on hopper was made out of componenets originally designed as a generic lidar mount and a cross piece for mounting. This design wasn't ideal as it placed the lidar rather high on top of the body. This affected both the center of mass of the robot and made scanning low obstacles harder.
+The original mount for the lidar on Hopper was made out of components originally designed as a generic lidar mount and a cross piece for mounting. This design wasn't ideal as it placed the lidar rather high on top of the body. This affected both the center of mass of the robot and made scanning low obstacles harder.
 
-A new lidar mount was design that directly integrates on the roof plate of hoppper. With no aditional connecting parts the mount is dirrectly mounted with 3 3M screws with the nuts embedded inside of the printed part.
+A new lidar mount was design that directly integrates on the roof plate of Hopper. With no aditional connecting parts the mount is dirrectly mounted with 3 3M screws with the nuts embedded inside of the printed part.
 
 Part can be seen here:
 <iframe src="https://myhub.autodesk360.com/ue280e3f5/shares/public/SHabee1QT1a327cf2b7a0523d7005c94b391?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>  
@@ -182,10 +261,10 @@ The switches are wired into an Arduino NANO microcontroller on the back of the r
 
 ##### Cooling
 
-One of the problems encountered during the project was that once most of the processing was moved to the on board comptuer it started overheating.
-As most modern computers, the Raspberry pi, will throttle it's CPU when it detects overheating. This caused the gait generation to slow down and hoppers movement would start stuttering.
+One of the problems encountered during the project was that once most of the processing was moved to the on board computer it started overheating.
+As most modern computers, the Raspberry pi, will throttle it's CPU when it detects overheating. This caused the gait generation to slow down and Hoppers movement would start stuttering.
 
-The solution to this problem was to add active cooling to the robot. Since I didn't want to deal with these issues ever again I decided to add 3 40mm fans that would push air inside of the main body and cooling fins that would allow the air to escape. This way I created positive presure inside of the main body which meant that air would flow inside before escaping through any opening. This will also prevent the gathering of dust in the main body.
+The solution to this problem was to add active cooling to the robot. Since I didn't want to deal with these issues ever again I decided to add 3 40mm fans that would push air inside of the main body and cooling fins that would allow the air to escape. This way I created positive pressure inside of the main body which meant that air would flow inside before escaping through any opening. This will also prevent the gathering of dust in the main body.
 
 The cooling fans are clearly visible in the main CAD model. One on top of each middle leg and one on top of the head.
 
@@ -196,23 +275,23 @@ Image of foot with sensor
 
 ### Software
 
-The software stack on hopper had to undergo the main changes.
+The software stack on Hopper had to undergo the main changes.
 
-Original aproach to solving our problem was to performa a 3D scan of the obstacle using the 2D lidar attached to the top of the robot. It's a pretty commong practice to obtain 3D scans of the enviroment by tilting a 2D lidar. So common in fact that ROS includes multiple libraries just for mergeing laser scans into point clouds.
-Hopper even offered a unique oportunity. We didn't have to add a motor or mounting system that would allow for tilting since the hexapod legged platform can alredy move it's body in full 6 Degrees of freedom.
-As previously mentioned hopper alredy had the ability to let external nodes modify it's posture. This was allowed by exposing a topic with 2 vectors as arguemnts. One for translation and one for roll, pitch and yaw in euler angles (After later usage I wish I used a quaternion for rotation instead)
+Original approach to solving our problem was to perform a 3D scan of the obstacle using the 2D lidar attached to the top of the robot. It's a pretty common practice to obtain 3D scans of the environment by tilting a 2D lidar. So common in fact that ROS includes multiple libraries just for merging laser scans into point clouds.
+Hopper even offered a unique opportunity. We didn't have to add a motor or mounting system that would allow for tilting since the hexapod legged platform can already move it's body in full 6 Degrees of freedom.
+As previously mentioned Hopper already had the ability to let external nodes modify it's posture. This was allowed by exposing a topic with 2 vectors as arguments. One for translation and one for roll, pitch and yaw in euler angles (After later usage I wish I used a quaternion for rotation instead)
 
 #### Lidar scanning node
 
 This node has two scanning modes.
-First is a continuouse scanning mode in which hopper keeps gradualy tilts in every direction slowly following a circle. This allows the lidar to scan all of it's suroundings. The beam isn't high enough to observe tall obstacles but it allows us to create an image of the 3D space surrounding the robot. You can see a video [here](https://youtu.be/StWPPSDLb4A)
+First is a continuouse scanning mode in which Hopper keeps gradually tilts in every direction slowly following a circle. This allows the lidar to scan all of it's suroundings. The beam isn't high enough to observe tall obstacles but it allows us to create an image of the 3D space surrounding the robot. You can see a video [here](https://youtu.be/StWPPSDLb4A)
 
-Second mode is a servic allowing for scan on demand. This service has two modes. Front/back and left/right. In front/back mode the robot tilts facting down and slowly turns it's face upwards. This way the lidar slowly scans everything in front and behind the robot. You can see video [here](https://youtu.be/HUGzx2rlzIY). The left to right mode does the same thing but from one side to the other. THis service also takes an angle (This is the vertical field of view of the scan) and a duration (This is how long the scan should last). By making the scan longer the lidar will have time to do more scans and produce higher resolution scans.
+Second mode is a service allowing for scan on demand. This service has two modes. Front/back and left/right. In front/back mode the robot tilts facing down and slowly turns it's face upwards. This way the lidar slowly scans everything in front and behind the robot. You can see video [here](https://youtu.be/HUGzx2rlzIY). The left to right mode does the same thing but from one side to the other. THis service also takes an angle (This is the vertical field of view of the scan) and a duration (This is how long the scan should last). By making the scan longer the lidar will have time to do more scans and produce higher resolution scans.
 
 This progressive scanning method is using [Laser assembler package](http://wiki.ros.org/laser_assembler) from the ROS repositories. This package collects laser scans (data coming from 2D lidars) and on request assembles them into point clouds. It uses TF transforms to track the movement of the laser base.
-In order to see the relative motion of the lidar we use the center of hoppers footprint as a stable point against which to translate all laser scans. This means that hopper can't move during the scan. If the robot were to move we would loose track of the relative position of the lidar. Odometry doesn't offer sufficient precision and hopper can't be using localization while tilting since localization relies on laser scan data connected in horizontal plane.
+In order to see the relative motion of the lidar we use the center of Hoppers footprint as a stable point against which to translate all laser scans. This means that Hopper can't move during the scan. If the robot were to move we would loose track of the relative position of the lidar. Odometry doesn't offer sufficient precision and Hopper can't be using localization while tilting since localization relies on laser scan data connected in horizontal plane.
 
-The Laser Assembler apraoch later proved to have a significant issue. Since all of the scanned pointclouds were moved to hoppers foot print. The resulting data lookd as if it originated from bellow hopper. This is an issue since OctoMap (mapping library I used to assemble occupancy data about the enviroment) uses the origin point and a place where to cast collision checking from. This means that the octomap wasn't updating correctly after moving around.
+The Laser Assembler approach later proved to have a significant issue. Since all of the scanned pointclouds were moved to Hoppers foot print. The resulting data appeared as if it originated from bellow Hopper. This is an issue since OctoMap (mapping library I used to assemble occupancy data about the environment) uses the origin point and a place where to cast collision checking from. This means that the OctoMap wasn't updating correctly after moving around.
 
 #### Processing point cloud data
 
@@ -224,19 +303,19 @@ I devised 3 different aproaches for this:
 1. Crate probabilistic 3D map using octrees and octmap
 1. detect with raw point cloud data and detect surface normals and contact points based on point density
 
-Out of all of these OctoMap was the simplest to test. [OctoMap](http://octomap.github.io/) is a probabilistic mapping framework that uses Octrees to map the world. Octrees are a very efficient method for storing data about the world. Another major adventage of octrees over the other two apraoches was that octrees allow us to encode the difference between unknown and empty space. This is important since you need to plan movement differently around empty and unknown areas. This would also allow us to potentially move the robot around and perform another scan from a different angle to map previously unknown area. It would also let us using mapping data from outr robots operating in the same area to enhance our knowledge of the world.
+Out of all of these OctoMap was the simplest to test. [OctoMap](http://octomap.github.io/) is a probabilistic mapping framework that uses Octrees to map the world. Octrees are a very efficient method for storing data about the world. Another major advantage of octrees over the other two approaches was that octrees allow us to encode the difference between unknown and empty space. This is important since you need to plan movement differently around empty and unknown areas. This would also allow us to potentially move the robot around and perform another scan from a different angle to map previously unknown area. It would also let us using mapping data from other robots operating in the same area to enhance our knowledge of the world.
 
 ##### OctoMap
 
-Implementing [OctoMap](http://wiki.ros.org/octomap_server) was very easy since there is an already existing ROS node for it. This node simply takes in pointcloud data and creates a map from this. From this server we can pull the new probablistic model of the world as a ROS message and process it using the Octomap library.
-The library allows us to interact with the octree in differnet ways. One of the simples ways is to check collisions by raycasting. 
+Implementing [OctoMap](http://wiki.ros.org/octomap_server) was very easy since there is an already existing ROS node for it. This node simply takes in pointcloud data and creates a map from this. From this server we can pull the new probabilistic model of the world as a ROS message and process it using the OctoMap library.
+The library allows us to interact with the Octree in different ways. One of the simples ways is to check collisions by raycasting.  
 
-My first step was to simple figure out if there is a tall obstacle right in front of hopper. For this purpose I created a service which will perforam raycasts from hoppers position on map directly in front and return all points which collide on a vertical line. 
-This means we effecitvely get distances of object in front of hopper at different heights. Even if this doesn't allos us to extract any information about the surface of the obstacles it lets us know the height of the obstacle and distance from it. 
+My first step was to simple figure out if there is a tall obstacle right in front of Hopper. For this purpose I created a service which will perform raycasts from Hoppers position on map directly in front and return all points which collide on a vertical line. 
+This means we effecitvely get distances of object in front of Hopper at different heights. Even if this doesn't allow us to extract any information about the surface of the obstacles it lets us know the height of the obstacle and distance from it. 
 
 #### Motion control interface
 
-Hopper originally didn't provide an external interface for controlling motions of it's limbs. An external node could theoretically try sending position of the feet to the IK controller but it's commands would be overriden by the main boddy controller. That's why it became nessesary to construct a simple to use external API for control of hopper's body.
+Hopper originally didn't provide an external interface for controlling motions of it's limbs. An external node could theoretically try sending position of the feet to the IK controller but it's commands would be overridden by the main body controller. That's why it became necessary to construct a simple to use external API for control of Hopper's body.
 
 To allow remote control I implemented a set of services exposed by the main controller node. Specifically there are 8 services.
 
@@ -259,13 +338,13 @@ These are:
 1. move_body_relative
   * Move center of body relative to it's current position
 
-The important distincion of these services is that they let us position limbs in the tf coordinate space. That means the user doesn't have to figure out relative position of an object to hopper and then translate the foot position. The controller node will do it on it's own.
+The important distincion of these services is that they let us position limbs in the tf coordinate space. That means the user doesn't have to figure out relative position of an object to Hopper and then translate the foot position. The controller node will do it on it's own.
 
-To test this functionality I implemented a high-five feature for hopper. This node will try to detect any close objects in the laser scan data coming from the lidar and tap it's foot on them. As the name sugest the main purpose of this feature is to high-five or fist bump Hopper.
+To test this functionality I implemented a high-five feature for Hopper. This node will try to detect any close objects in the laser scan data coming from the lidar and tap it's foot on them. As the name sugest the main purpose of this feature is to high-five or fist bump Hopper.
 [Video can be seen here](https://youtu.be/IpTWQ5nY95U)
 
-This feature shows the precision with which hopper can control the positions of it's in relation to detected objects.
-DUring tests hopper could succesfully hit a finger with it's foot.
+This feature shows the precision with which Hopper can control the positions of it's in relation to detected objects.
+DUring tests Hopper could succesfully hit a finger with it's foot.
 
 ##### Problems
 
@@ -273,7 +352,7 @@ When trying to reconstruct the shape of the obstacle, it very quickly became apa
 
 This meant that trying to get surface normals from neighbouring points would be imprecise.
 
-If I had more time I would try to use octomaps ability to map unknown space and force the robot to reposition and erescan unknown areas. This could be conviniently done using the ray cast system built into octomap that can be used to detect from which point could you see the unknown space. In order to implement this I would have to resolve the issue with octomap collision checking being done from the wrong origin point.
+If I had more time I would try to use OctoMaps ability to map unknown space and force the robot to reposition and erescan unknown areas. This could be conviniently done using the ray cast system built into OctoMap that can be used to detect from which point could you see the unknown space. In order to implement this I would have to resolve the issue with OctoMap collision checking being done from the wrong origin point.
 
 But even with this problem, scans had enought detail on vertical walls to precisly estimate obstacle heights and shapes. The only problem was the accuracy. Even if the obstacle was reconsutructed with good detail the entire object would be shifted from real world. After an investigation it seemed that this was a combination of lidar accuracy issue, IMU precision and motor sagging.
 
@@ -291,11 +370,11 @@ Accuracy issues:
 * IMU
   * Meh. It's good.
 
-After investigating these issues I decided that I will use the precise vertical data to estimate obstacle height. And make sure that I am correctly aligned by detecting collisions with the touch sensors on the feet. This way even if the obstacle is a bit closer or futhure away than expected hopper will simply climb over it. And if it's a bit height I will simple lift the feet heighr and lower them until I hit the obstacle from the top.
+After investigating these issues I decided that I will use the precise vertical data to estimate obstacle height. And make sure that I am correctly aligned by detecting collisions with the touch sensors on the feet. This way even if the obstacle is a bit closer or futhure away than expected Hopper will simply climb over it. And if it's a bit height I will simple lift the feet heighr and lower them until I hit the obstacle from the top.
 
 #### Climbing
 
-Since hopper was originally designed for walking on mostly flat surfaces it's legs aren't well designed for climbing. It's originally feet didn't provide that much friction and the straight profile of tibia prevented the leg from reaching high places.
+Since Hopper was originally designed for walking on mostly flat surfaces it's legs aren't well designed for climbing. It's originally feet didn't provide that much friction and the straight profile of tibia prevented the leg from reaching high places.
 
 [Video of hardcoded climb](https://youtu.be/viiy9UijGl4)
 
@@ -303,10 +382,10 @@ Keeping in spirit with trying to adopt the walking algorithm the smallest amount
 
 ##### Hoppers original gait generator
 
-The orignal gait generator on hopper is using a staticly defined tripod gait. Tripod gait works by always lifting 3 legs. Front and rear on one side and middle on the other side. This way the robot always maintain's tripod stability. That means 3 feet are always on the ground and center of mass of the robot is inside of the triangle created by the contact points with ground. This makes this gait "Statically stable". As a result you can stop the movemnt in any stage and the robot will stay stable. 
+The orignal gait generator on Hopper is using a staticly defined tripod gait. Tripod gait works by always lifting 3 legs. Front and rear on one side and middle on the other side. This way the robot always maintain's tripod stability. That means 3 feet are always on the ground and center of mass of the robot is inside of the triangle created by the contact points with ground. This makes this gait "Statically stable". As a result you can stop the movemnt in any stage and the robot will stay stable. 
 This is contrary to dynamically stable gaits which are relying on effectively falling into a step. Dynamically stable gaits are usually used by bipedal or quadrupedal robots.
 
-The gair generation procedure for hopper can be described in few steps.
+The gair generation procedure for Hopper can be described in few steps.
 
 1. select feet combination for moving
 1. calculate desired position by estimating traveled distance based on desired speed
@@ -328,7 +407,7 @@ In order to test Hopper's climbing ability I constructed few different obstacles
 
 ### Results
 
-[Here is a full video of hopper performing a scan and climbing over an obstacle with multiple layers](https://youtu.be/faWG_BYd5a0)
+[Here is a full video of Hopper performing a scan and climbing over an obstacle with multiple layers](https://youtu.be/faWG_BYd5a0)
 
 Even if the scan is performed the data from it is only printed on screen of my laptop and I manually adjust the height of the body and leg lift height on a remote controller. Speed and direction is also manually controlled in this video. But there is not reason the same princple wouldn't work for autonomouse navigation. 
 
@@ -338,13 +417,13 @@ You can clearly see the gait behavior in this video.
 1. Lifted legs are slowly moved towards a target while the grounded leg are pushing the robot forward.
 1. Legs are slowly lowered until they encounter an obstacle at which point they stop lowering
 
-THe robot is very stable and platform stays level. This is without any compensation from the IMU. It would be very easy to make hopper level after each step. Butit was never nessasry in my testing.
+THe robot is very stable and platform stays level. This is without any compensation from the IMU. It would be very easy to make Hopper level after each step. Butit was never nessasry in my testing.
 
-`The little wobble and up and down motion is because the first obstacle was broken. It was a folded black transport box and the bottom of it was cracked and flexing under hopper`
+`The little wobble and up and down motion is because the first obstacle was broken. It was a folded black transport box and the bottom of it was cracked and flexing under Hopper`
 
-[This video shows hopper climbing a single taller obstacle](https://youtu.be/zKntn13qdg4)
+[This video shows Hopper climbing a single taller obstacle](https://youtu.be/zKntn13qdg4)
 
-In this case there was no scan. I simply set hopper to lift it's feet 11 cm heigh. The obstacle is 9 centimeters tall. From my experiments this seems to be the heighest ibstacle that hopper can overcome. The limit seems to be the height to which hopper can lift it's legs. As you can see in the video the legs are getting as close to the body as they can. This could be compensated by moving the feet a bit furthure away from the body but this would cause them to slip if lowered to the ground. As previously mentioned, the Tibia has to be as close to perpendicular to the ground as possible to prevent slipping.
+In this case there was no scan. I simply set Hopper to lift it's feet 11 cm heigh. The obstacle is 9 centimeters tall. From my experiments this seems to be the heighest ibstacle that Hopper can overcome. The limit seems to be the height to which Hopper can lift it's legs. As you can see in the video the legs are getting as close to the body as they can. This could be compensated by moving the feet a bit furthure away from the body but this would cause them to slip if lowered to the ground. As previously mentioned, the Tibia has to be as close to perpendicular to the ground as possible to prevent slipping.
 
 ### Conclusion
 
