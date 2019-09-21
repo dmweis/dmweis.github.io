@@ -69,3 +69,39 @@
   - relative_path: last_2.jpg
     relative_path_thumbnail: thumbnails/last_2_tn.jpg
     text: One of the last pictures before taking it apart
+
+- id: gallery2
+  name: New picture of Hopper
+  description: Hopper 2019
+  folder_path: /images/Robotics/HopperMasters
+  images:
+  - relative_path: CoolingFanHead.JPG
+    relative_path_thumbnail: thumbnails/CoolingFanHead.JPG
+    text: lorem impsum
+  - relative_path: CoolingFanSide.JPG
+    relative_path_thumbnail: thumbnails/CoolingFanSide.JPG
+    text: lorem impsum
+  - relative_path: FootSensor.JPG
+    relative_path_thumbnail: thumbnails/FootSensor.JPG
+    text: lorem impsum
+  - relative_path: HopperLegRender.jpg
+    relative_path_thumbnail: thumbnails/HopperLegRender.jpg
+    text: lorem impsum
+  - relative_path: HopperPromo.JPG
+    relative_path_thumbnail: thumbnails/HopperPromo.JPG
+    text: lorem impsum
+  - relative_path: HopperRender.jpg
+    relative_path_thumbnail: thumbnails/HopperRender.jpg
+    text: lorem impsum
+  - relative_path: HopperRevisionHistory.png
+    relative_path_thumbnail: thumbnails/HopperRevisionHistory.png
+    text: lorem impsum
+  - relative_path: hopper_cad.jpg
+    relative_path_thumbnail: thumbnails/hopper_cad.jpg
+    text: lorem impsum
+  - relative_path: OriginalHopper.jpg
+    relative_path_thumbnail: thumbnails/OriginalHopper.jpg
+    text: lorem impsum
+  - relative_path: SwitchController.JPG
+    relative_path_thumbnail: thumbnails/SwitchController.JPG
+    text: lorem impsum
