@@ -2,7 +2,7 @@
 title: David Weis
 ---
 
-# Hi, I'm David!
+# Hello!
 
 *Welcome to my new revamped page!!!*
 
