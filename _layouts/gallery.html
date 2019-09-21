@@ -3,11 +3,13 @@ layout: default
 ---
 <link rel="stylesheet" href="{{ '/assets/css/gallery.css?v=' | append: site.github.build_revision | relative_url }}">
 
-{{ content }}
 
 {% for gallery in site.data.galleries %}
     {% if gallery.id == page.gallery_id %}
         <h1>{{ gallery.description }}</h1>
+        <br/>
+        {{ content }}
+        <br/>
         {% for image in gallery.images %}
             <div class="gallery">
                 <a href="{{ site.url }}/{{ gallery.folder_path }}/{{ image.relative_path }}" data-lightbox="gallery.name" data-title="{{ image.text }}">
