@@ -3,6 +3,8 @@ layout: default
 ---
 <link rel="stylesheet" href="{{ '/assets/css/gallery.css?v=' | append: site.github.build_revision | relative_url }}">
 
+{{ content }}
+
 {% for gallery in site.data.galleries %}
     {% if gallery.id == page.gallery_id %}
         <h1>{{ gallery.description }}</h1>
