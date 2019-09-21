@@ -76,25 +76,25 @@
   folder_path: /images/Robotics/HopperMasters
   images:
   - relative_path: CoolingFanHead.JPG
-    relative_path_thumbnail: thumbnails/CoolingFanHead_tn.JPG
+    relative_path_thumbnail: thumbnails/CoolingFanHead_tn.jpg
     text: lorem impsum
   - relative_path: CoolingFanSide.JPG
-    relative_path_thumbnail: thumbnails/CoolingFanSide_tn.JPG
+    relative_path_thumbnail: thumbnails/CoolingFanSide_tn.jpg
     text: lorem impsum
   - relative_path: FootSensor.JPG
-    relative_path_thumbnail: thumbnails/FootSensor_tn.JPG
+    relative_path_thumbnail: thumbnails/FootSensor_tn.jpg
     text: lorem impsum
   - relative_path: HopperLegRender.jpg
     relative_path_thumbnail: thumbnails/HopperLegRender_tn.jpg
     text: lorem impsum
   - relative_path: HopperPromo.JPG
-    relative_path_thumbnail: thumbnails/HopperPromo_tn.JPG
+    relative_path_thumbnail: thumbnails/HopperPromo_tn.jpg
     text: lorem impsum
   - relative_path: HopperRender.jpg
     relative_path_thumbnail: thumbnails/HopperRender_tn.jpg
     text: lorem impsum
   - relative_path: HopperRevisionHistory.png
-    relative_path_thumbnail: thumbnails/HopperRevisionHistory_tn.png
+    relative_path_thumbnail: thumbnails/HopperRevisionHistory_tn.jpg
     text: lorem impsum
   - relative_path: hopper_cad.jpg
     relative_path_thumbnail: thumbnails/hopper_cad_tn.jpg
@@ -103,5 +103,5 @@
     relative_path_thumbnail: thumbnails/OriginalHopper_tn.jpg
     text: lorem impsum
   - relative_path: SwitchController.JPG
-    relative_path_thumbnail: thumbnails/SwitchController_tn.JPG
+    relative_path_thumbnail: thumbnails/SwitchController_tn.jpg
     text: lorem impsum
