@@ -71,8 +71,8 @@
     text: One of the last pictures before taking it apart
 
 - id: gallery2
-  name: New picture of Hopper
-  description: Hopper 2019
+  name: Pictures of hopper from my masters project
+  description: Hopper Masters pictures
   folder_path: /images/Robotics/HopperMasters
   images:
   - relative_path: CoolingFanHead.JPG
@@ -104,4 +104,49 @@
     text: lorem impsum
   - relative_path: SwitchController.JPG
     relative_path_thumbnail: thumbnails/SwitchController_tn.jpg
+    text: lorem impsum
+
+- id: gallery3
+  name: New picture of Hopper
+  description: Hopper 2019
+  folder_path: /images/Robotics/HopperSummer2019
+  images:
+  - relative_path: hopper_cad.jpg
+    relative_path_thumbnail: thumbnails/hopper_cad_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_0799.JPG
+    relative_path_thumbnail: thumbnails/IMG_0799_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_0844.JPG
+    relative_path_thumbnail: thumbnails/IMG_0844_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_0951.JPG
+    relative_path_thumbnail: thumbnails/IMG_0951_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_0990.JPG
+    relative_path_thumbnail: thumbnails/IMG_0990_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_1012.JPG
+    relative_path_thumbnail: thumbnails/IMG_1012_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_1024.JPG
+    relative_path_thumbnail: thumbnails/IMG_1024_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_1033.JPG
+    relative_path_thumbnail: thumbnails/IMG_1033_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_1055.JPG
+    relative_path_thumbnail: thumbnails/IMG_1055_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_1079.JPG
+    relative_path_thumbnail: thumbnails/IMG_1079_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_1088.JPG
+    relative_path_thumbnail: thumbnails/IMG_1088_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_1096.JPG
+    relative_path_thumbnail: thumbnails/IMG_1096_tn.jpg
+    text: lorem impsum
+  - relative_path: IMG_1104.JPG
+    relative_path_thumbnail: thumbnails/IMG_1104_tn.jpg
     text: lorem impsum

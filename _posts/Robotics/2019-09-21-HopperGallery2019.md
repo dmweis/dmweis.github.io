@@ -1,7 +1,7 @@
 ---
-title: Gallery for Hopper
+title: Hopper Gallery 2019
 layout: gallery
-gallery_id: gallery2
+gallery_id: gallery3
 categories: Robotics
 ---
 
