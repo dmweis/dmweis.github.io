@@ -2,6 +2,7 @@
 title: "Week Three: Tracking"
 categories: MIX
 tags: games vr mix unity tracking
+permalink: /tracking
 ---
 
 # This week's topic is Tracking!
