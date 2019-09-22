@@ -9,9 +9,6 @@ title: David Weis
 I am a Software Engineer from Slovakia, currently residing in Scotland.  
 I used to be a software engineer working in Air Traffic control in Denmark, but I got bored with my job one day and decided to move to Edinburgh and get a degree in Robotics instead. Now most of my days consist of skipping classes, teaching workshops and building robots.  
 
-~~This site doubles as a personal blog and a light portfolio, but it's current only updated sporadically (Mostly whenever I get bored...)~~  
-^ is what the site used to say, and it's still very much true, but I am working on the sporadically part.
-
 If you are interested in some of my projects I recommend that you check out my [GitHub](https://github.com/dmweis)  
 
 Or if you are interested in offering me a job or checking out what am I up to these days you can take a peek at my [LinkedIn](https://www.linkedin.com/in/david-weis/)
