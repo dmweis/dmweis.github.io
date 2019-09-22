@@ -1,6 +1,7 @@
 ---
 title: "Robotic Arm"
 categories: Robotics
+permalink: /robotarm
 ---
 
 # My 3D printed robotic arm project

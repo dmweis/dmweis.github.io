@@ -2,6 +2,7 @@
 title: "Week Seven: Final project - Part One"
 categories: MIX
 tags: games vr mix unity asymmetrical multiplayer 
+permalink: /vr-gm
 ---
 
 This week marks the end of regular projects every week. Instead we started working on our final project.
