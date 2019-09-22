@@ -1,6 +1,7 @@
 ---
 title: "Week One: Magic book"
 categories: MIX
+tags: games vr mix unity
 ---
 # First week: Magic book!
 

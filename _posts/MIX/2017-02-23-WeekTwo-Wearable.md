@@ -1,6 +1,7 @@
 ---
 title: "Week Two: Wearable"
 categories: MIX
+tags: games vr mix unity wearables
 ---
 
 # This week's topic: Wearable technology!

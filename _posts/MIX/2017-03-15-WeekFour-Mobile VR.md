@@ -1,6 +1,7 @@
 ---
 title: "Week Four: Mobile VR"
 categories: MIX
+tags: games vr mix unity mobile
 ---
 
 _Topic in this post is related to topic from week three for so you should read the [previous blog about tracking]({{ site.baseurl }}{% post_url MIX/2017-03-02-WeekThree-Tracking %}) first._

@@ -1,6 +1,7 @@
 ---
 title: "Week Eight: Final project - Part Two"
 categories: MIX
+tags: games vr mix unity asymmetrical multiplayer 
 ---
 
 As promised [last time]({{ site.baseurl }}{% post_url MIX/2017-05-01-FinalProject-One %})! We'll talk about the GM table part of our final project.

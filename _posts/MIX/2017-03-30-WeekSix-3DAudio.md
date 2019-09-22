@@ -1,6 +1,7 @@
 ---
 title: "Week Six: Spatial Audio"
 categories: MIX
+tags: games vr mix unity audio
 ---
 
 # This week's topic: 3D Audio!

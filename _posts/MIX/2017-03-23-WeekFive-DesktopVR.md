@@ -1,6 +1,7 @@
 ---
 title: "Week Five: Desktop VR"
 categories: MIX
+tags: games vr mix unity vive cybermaxx
 ---
 
 # This week's topic: Desktop VR
