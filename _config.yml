@@ -4,3 +4,11 @@ title: David Weis
 description: Personal site of David Weis
 # Google services
 google_analytics: UA-99324730-1
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      author: "David Weis"
+      tags: robotics
