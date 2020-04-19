@@ -28,6 +28,8 @@ Description=Discord Relay
 
 [Service]
 Type=simple
+Restart=on-failure
+RestartSec=5s
 Environment="DISCORD_TOKEN=SECRET_SAUCE_PASSWORD"
 ExecStart=/home/pi/.cargo/bin/discord_relay
 
