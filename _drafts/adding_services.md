@@ -9,6 +9,7 @@ Description=Hamilton core
 
 [Service]
 Type=simple
+Restart=on-failure
 ExecStart=COMMAND
 # example:
 ExecStart=/usr/bin/python3  /home/pi/src/Hamilton/controller/steam_test.py
