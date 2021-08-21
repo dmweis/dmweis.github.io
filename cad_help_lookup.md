@@ -14,7 +14,9 @@ permalink: /cad.html
 
 [![M3 screw hole sizes]({{site.url}}/images/CadLookUp/M3.PNG)]({{site.url}}/images/CadLookUp/M3.PNG){: data-lightbox="CAD" data-title="M3 screw hole sizes"}
 
-### Magnet
+### 10x2mm Magnet
+
+[I think this is the amazon link](https://smile.amazon.co.uk/gp/product/B06X977K8L)
 
 [![Magnet sizes]({{site.url}}/images/CadLookUp/Magnet.PNG)]({{site.url}}/images/CadLookUp/Magnet.PNG){: data-lightbox="CAD" data-title="Magnet sizes"}
 
