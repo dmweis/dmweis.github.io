@@ -26,8 +26,8 @@ permalink: /cad.html
 
 [Amazon link](https://smile.amazon.co.uk/gp/product/B0038A4MKI/)
 
-5.2 is a right fit. May go 5.3 for vertical holes.
+5.2mm diameter is a tight fit. Probably try 5.3mm for vertical holes.
 
-Depth 5.1 works both sides up. May want to do 5.2 for glued spots. Careful about elephants foot.
+Depth 5.1mm works both sides up. May want to do 5.2 for glued spots. Careful about elephants foot.
 
 [![5x5mm Magnet top]({{site.url}}/images/CadLookUp/5x5_magnet_top.png)]({{site.url}}/images/CadLookUp/5x5_magnet_top.png){: data-lightbox="CAD" data-title="[5x5mm Magnet top"}
