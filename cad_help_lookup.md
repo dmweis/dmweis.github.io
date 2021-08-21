@@ -21,3 +21,13 @@ permalink: /cad.html
 ### AX-12A
 
 [![AX-12A dimensions]({{site.url}}/images/CadLookUp/AX-12A.PNG)]({{site.url}}/images/CadLookUp/AX-12A.PNG){: data-lightbox="CAD" data-title="AX-12A dimensions"}
+
+### 5x5mm magnet
+
+[Amazon link](https://smile.amazon.co.uk/gp/product/B0038A4MKI/)
+
+5.2 is a right fit. May go 5.3 for vertical holes.
+
+Depth 5.1 works both sides up. May want to do 5.2 for glued spots. Careful about elephants foot.
+
+[![5x5mm Magnet top]({{site.url}}/images/CadLookUp/5x5_magnet_top.png)]({{site.url}}/images/CadLookUp/5x5_magnet_top.png){: data-lightbox="CAD" data-title="[5x5mm Magnet top"}
