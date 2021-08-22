@@ -18,6 +18,8 @@ permalink: /cad.html
 
 [Amazon link](https://smile.amazon.co.uk/gp/product/B06X977K8L)
 
+Magnet facing up 2.2mm, magnet facing down 2.4mm.
+
 [![10x2mm Magnet top]({{site.url}}/images/CadLookUp/10x2_magnet_top.png)]({{site.url}}/images/CadLookUp/10x2_magnet_top.png){: data-lightbox="CAD" data-title="[10x2mm Magnet top"}
 
 ### Some other magnet that I used to have
