@@ -16,7 +16,9 @@ permalink: /cad.html
 
 ### 10x2mm Magnet
 
-[I think this is the amazon link](https://smile.amazon.co.uk/gp/product/B06X977K8L)
+[Amazon link](https://smile.amazon.co.uk/gp/product/B06X977K8L)
+
+### Some other magnet that I used to have
 
 [![Magnet sizes]({{site.url}}/images/CadLookUp/Magnet.PNG)]({{site.url}}/images/CadLookUp/Magnet.PNG){: data-lightbox="CAD" data-title="Magnet sizes"}
 
