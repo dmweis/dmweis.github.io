@@ -25,7 +25,3 @@ You can find all of my robotics projects [here]({{ site.baseurl }}{% link pages/
 ## [MIX]({{ site.baseurl }}{% link pages/mix_posts.md %})
 
 If you are looking for posts written for my Mixed reality Course at VIA you can find them [here]({{ site.baseurl }}{% link pages/mix_posts.md %})
-
-## Where is David?
-
-This project was put on hiatus. But if you'd like to check where I am anyway you may have some luck [here](http://aprs.fi/?call=2M0WUE)
