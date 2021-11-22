@@ -15,9 +15,8 @@ If you are interested in offering me a job [here is my resume]({{ '/assets/files
 ## Latest posts
 
 {% for post in site.posts limit:5 %}
-
 - [{{ post.title }}]({{ post.url }})
-  {% endfor %}
+{% endfor %}
 
 ## [Robotics or DIY projects]({{ site.baseurl }}{% link pages/robotics_projects.md %})
 
