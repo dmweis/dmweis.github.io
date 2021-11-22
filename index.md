@@ -4,7 +4,7 @@ title: David Weis
 
 # Hello!
 
-*Welcome to my page!!!*
+_This website isn't being actively maintained anymore._
 
 I am a Software Engineer from Slovakia, currently residing in Scotland.  
 I used to be a software engineer working in Air Traffic control in Denmark, but I got bored with my job one day and decided to move to Edinburgh and get a degree in Robotics instead. Now most of my days consist of skipping classes, teaching workshops and building robots.  
