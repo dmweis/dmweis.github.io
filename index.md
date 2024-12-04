@@ -7,7 +7,7 @@ title: David Weis
 _This website isn't being actively maintained anymore._
 
 I am a software engineers originally from Slovakia.  
-Currently I am living in UK working on self-driving cars.
+Currently living in New York working on humanoid robots.
 
 If you are interested in some of my projects I recommend that you check out my [GitHub](https://github.com/dmweis)
 
